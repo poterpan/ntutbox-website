@@ -72,6 +72,9 @@
 
 - [ ] **Step 2: 寫 tsconfig.json**
 
+> 實測註記（2026-07-19）：Next 16.2.9 build 會強制把 `"jsx"` 改寫為 `"react-jsx"` 並在
+> include 加入 `.next/dev/types/**/*.ts`（已實驗證實）。以 Next 改寫後的版本為準。
+
 ```json
 {
   "compilerOptions": {
