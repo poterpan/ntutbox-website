@@ -21,7 +21,7 @@ function allHtmlFiles(dir = OUT, acc = []) {
 }
 
 // ── 1. 必要檔案（隨任務增長）────────────────────────────
-const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png"];
+const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "privacy/index.html"];
 for (const f of REQUIRED_FILES) if (!exists(f)) fail(`缺少必要檔案 out/${f}`);
 
 const shots = exists("screenshots")
@@ -60,6 +60,12 @@ const PAGE_ASSERTIONS = {
     "application/ld+json",
     "期末預選選課",
     "開發中",
+  ],
+  "privacy/index.html": [
+    "隱私權政策",
+    "Keychain",
+    "第三方伺服器",
+    "最後更新",
   ],
 };
 for (const [page, terms] of Object.entries(PAGE_ASSERTIONS)) {
