@@ -51,6 +51,15 @@ const PAGE_ASSERTIONS = {
     "/support/",
     "status.ntutbox.com",
     "instagram.com/ntutbox_official",
+    // Landing（Task 5）
+    "apps.apple.com/tw/app/id6753217696",
+    "提供北科學生方便的校務體驗",
+    "iPad 與 Apple Silicon Mac 亦可安裝使用",
+    "訪客模式",
+    "course.ntutbox.com",
+    "application/ld+json",
+    "期末預選選課",
+    "開發中",
   ],
 };
 for (const [page, terms] of Object.entries(PAGE_ASSERTIONS)) {

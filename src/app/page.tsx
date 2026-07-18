@@ -1,7 +1,42 @@
+import {
+  APP_NAME,
+  APP_NAME_EN,
+  APP_STORE_URL,
+  SITE_DESCRIPTION,
+  SITE_URL,
+} from "@/content/site";
+import { Hero } from "@/components/site/hero";
+import { Features } from "@/components/site/features";
+import { Screenshots } from "@/components/site/screenshots";
+import { GuestCta } from "@/components/site/guest-cta";
+import { Ecosystem } from "@/components/site/ecosystem";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: APP_NAME,
+  alternateName: APP_NAME_EN,
+  description: SITE_DESCRIPTION,
+  operatingSystem: "iOS",
+  applicationCategory: "EducationApplication",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "TWD" },
+  aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "18" },
+  url: SITE_URL,
+  downloadUrl: APP_STORE_URL,
+};
+
 export default function Home() {
   return (
-    <main className="flex min-h-dvh items-center justify-center">
-      <h1 className="text-3xl font-bold text-[var(--ink)]">北科盒子</h1>
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Hero />
+      <Features />
+      <Screenshots />
+      <GuestCta />
+      <Ecosystem />
+    </>
   );
 }

@@ -112,15 +112,42 @@ export const COMING_SOON = ["多學期課表查詢", "iCal 匯出"];
 export type Screenshot = { src: string; alt: string };
 
 export const SCREENSHOTS: Screenshot[] = [
-  { src: "/screenshots/preview-1.webp", alt: "北科盒子 App 截圖 1" },
-  { src: "/screenshots/preview-2.webp", alt: "北科盒子 App 截圖 2" },
-  { src: "/screenshots/preview-3.webp", alt: "北科盒子 App 截圖 3" },
-  { src: "/screenshots/preview-4.webp", alt: "北科盒子 App 截圖 4" },
-  { src: "/screenshots/preview-5.webp", alt: "北科盒子 App 截圖 5" },
-  { src: "/screenshots/preview-6.webp", alt: "北科盒子 App 截圖 6" },
-  { src: "/screenshots/preview-7.webp", alt: "北科盒子 App 截圖 7" },
-  { src: "/screenshots/preview-8.webp", alt: "北科盒子 App 截圖 8" },
-  { src: "/screenshots/preview-11.webp", alt: "北科盒子 App 截圖 9" },
+  {
+    src: "/screenshots/preview-1.webp",
+    alt: "今日總覽畫面，顯示目前上課中的課程倒數、待辦事項與近期行程",
+  },
+  {
+    src: "/screenshots/preview-2.webp",
+    alt: "登入畫面，輸入北科大學號與密碼即可一鍵同步課表",
+  },
+  {
+    src: "/screenshots/preview-3.webp",
+    alt: "桌面小工具設定畫面，顯示當前課程時間與地點",
+  },
+  {
+    src: "/screenshots/preview-4.webp",
+    alt: "成績查詢畫面，顯示歷年 GPA、班級與系所排名及各科成績",
+  },
+  {
+    src: "/screenshots/preview-5.webp",
+    alt: "建立課表畫面，可選擇學校範本或用 AI 轉換課表文字",
+  },
+  {
+    src: "/screenshots/preview-6.webp",
+    alt: "行事曆整合畫面，課表與校園行事曆同步至系統行事曆",
+  },
+  {
+    src: "/screenshots/preview-7.webp",
+    alt: "課表匯入確認畫面，顯示學校、學期與課程清單",
+  },
+  {
+    src: "/screenshots/preview-8.webp",
+    alt: "北科小郵差公告列表，依分類篩選顯示標題與發布日期",
+  },
+  {
+    src: "/screenshots/preview-11.webp",
+    alt: "分享課表畫面，產生連結與 QR Code 供他人一鍵匯入",
+  },
 ];
 
 export type FaqItem = { q: string; a: string };
