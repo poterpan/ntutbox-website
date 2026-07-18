@@ -12,3 +12,6 @@ out/
 # local settings
 .claude/settings.local.json
 .env*
+
+# sdd 進度 ledger（session 暫存）
+.superpowers/
