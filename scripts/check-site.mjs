@@ -43,7 +43,15 @@ for (const file of allHtmlFiles()) {
 
 // ── 4. 各頁內容斷言（隨任務增長；缺檔已在 §1 報告，這裡跳過）──
 const PAGE_ASSERTIONS = {
-  "index.html": [],
+  "index.html": [
+    // Footer（Task 4）
+    "本 App 為非官方應用程式，與國立臺北科技大學無正式關聯。所有課表資料來源於 NTUT 官方教務系統。",
+    "© 2026 PoterPan",
+    "/privacy/",
+    "/support/",
+    "status.ntutbox.com",
+    "instagram.com/ntutbox_official",
+  ],
 };
 for (const [page, terms] of Object.entries(PAGE_ASSERTIONS)) {
   if (!exists(page)) continue;
