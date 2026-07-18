@@ -21,7 +21,7 @@ function allHtmlFiles(dir = OUT, acc = []) {
 }
 
 // ── 1. 必要檔案（隨任務增長）────────────────────────────
-const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "privacy/index.html"];
+const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "privacy/index.html", "support/index.html"];
 for (const f of REQUIRED_FILES) if (!exists(f)) fail(`缺少必要檔案 out/${f}`);
 
 const shots = exists("screenshots")
@@ -66,6 +66,12 @@ const PAGE_ASSERTIONS = {
     "Keychain",
     "第三方伺服器",
     "最後更新",
+  ],
+  "support/index.html": [
+    "常見問題",
+    "instagram.com/ntutbox_official",
+    "poter.pan@panspace.me",
+    "status.ntutbox.com",
   ],
 };
 for (const [page, terms] of Object.entries(PAGE_ASSERTIONS)) {
