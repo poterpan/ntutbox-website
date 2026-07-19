@@ -77,6 +77,9 @@ const PAGE_ASSERTIONS = {
     "Keychain",
     "第三方伺服器",
     "最後更新",
+    "TelemetryDeck",
+    "資料保留與刪除",
+    "關閉匿名統計",
   ],
   "support/index.html": [
     "常見問題",

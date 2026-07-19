@@ -18,7 +18,7 @@
 | ntutbox-checkin | 不出現在官網 |
 | 狀態頁 | 順手綁 `status.ntutbox.com` → 現有 ntutbox-uptime.pages.dev，官網連自有網域 |
 | Repo | Public ＋ MIT（跟進 ntutbox-course、ntutbox-template-api 慣例） |
-| 隱私權政策 | 自寫繁中版掛 `/privacy`，取代第三方 privacypolicies.com 頁面 |
+| 隱私權政策 | 自寫繁中版掛 `/privacy`，取代第三方 privacypolicies.com 頁面。（2026-07-19 補強：App 實際使用 TelemetryDeck 匿名分析（App Store 隱私標籤申報「產品互動/用於分析/未連結身分」、App 內可關閉），政策新增「匿名使用分析」與「資料保留與刪除」兩節以符合審查指南 5.1.1(i)） |
 | spec 審閱 | 使用者明確免除書面 spec 審閱關卡，設計口頭核可（2026-07-19） |
 
 ## 1. 頁面架構
