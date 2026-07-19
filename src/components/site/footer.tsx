@@ -21,6 +21,8 @@ export function SiteFooter() {
               <a
                 key={l.label}
                 href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[var(--ink-soft)] transition-colors hover:text-[var(--accent-ink)]"
               >
                 {l.label}

@@ -33,6 +33,7 @@ const CONTACTS = [
     body: "@ntutbox_official，回報問題與功能許願的主要管道。",
     href: LINKS.instagram,
     label: "前往 Instagram",
+    external: true,
   },
   {
     icon: Mail,
@@ -40,6 +41,7 @@ const CONTACTS = [
     body: "不方便用 IG 的話，寄信給開發者也可以。",
     href: `mailto:${LINKS.email}`,
     label: "poter.pan@panspace.me",
+    external: false,
   },
   {
     icon: Activity,
@@ -47,6 +49,7 @@ const CONTACTS = [
     body: "課表抓不到？先看看是不是學校系統掛了。",
     href: LINKS.status,
     label: "status.ntutbox.com",
+    external: true,
   },
 ] as const;
 
@@ -72,7 +75,12 @@ export default function SupportPage() {
       <div className="mt-5 grid gap-4 sm:grid-cols-3">
         {CONTACTS.map((c) => (
           <GlassCard key={c.title} className="rounded-2xl p-0">
-            <a href={c.href} className="group block p-5">
+            <a
+              href={c.href}
+              target={c.external ? "_blank" : undefined}
+              rel={c.external ? "noopener noreferrer" : undefined}
+              className="group block p-5"
+            >
               <c.icon className="size-5 text-[var(--accent-ink)]" aria-hidden />
               <h3 className="mt-3 text-[15px] font-semibold text-[var(--ink)]">{c.title}</h3>
               <p className="mt-1.5 text-sm leading-6 text-[var(--ink-soft)]">{c.body}</p>

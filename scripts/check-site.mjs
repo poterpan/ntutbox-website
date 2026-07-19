@@ -21,7 +21,7 @@ function allHtmlFiles(dir = OUT, acc = []) {
 }
 
 // ── 1. 必要檔案（隨任務增長）────────────────────────────
-const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "privacy/index.html", "support/index.html", "404.html", "sitemap.xml", "robots.txt"];
+const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "favicon.png", "apple-touch-icon.png", "privacy/index.html", "support/index.html", "404.html", "sitemap.xml", "robots.txt"];
 for (const f of REQUIRED_FILES) if (!exists(f)) fail(`缺少必要檔案 out/${f}`);
 
 const shots = exists("screenshots")
@@ -36,8 +36,8 @@ for (const file of allHtmlFiles()) {
   for (const term of FORBIDDEN) {
     if (html.includes(term)) fail(`${file} 含禁字「${term}」`);
   }
-  if (/Live Activity|動態島/.test(html) && !html.includes("開發中")) {
-    fail(`${file} 提到 Live Activity／動態島但未標「開發中」`);
+  if (/Live Activity|動態島/.test(html) && !(html.includes("開發中") && html.includes("逐步完善"))) {
+    fail(`${file} 提到 Live Activity／動態島但未同時標「開發中」與「逐步完善」`);
   }
 }
 
@@ -60,6 +60,7 @@ const PAGE_ASSERTIONS = {
     "application/ld+json",
     "期末預選選課",
     "開發中",
+    "則評分",
     // SEO（Task 8）
     'property="og:image"',
     "北科盒子 NTUT Box — 北科大學生的智慧課表 App",

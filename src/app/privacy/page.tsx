@@ -67,6 +67,8 @@ export default function PrivacyPage() {
             對本政策或個人資料處理有任何疑問，歡迎透過 Instagram{" "}
             <a
               href={LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[var(--accent-ink)] underline underline-offset-4"
             >
               @ntutbox_official

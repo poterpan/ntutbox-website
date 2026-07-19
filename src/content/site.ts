@@ -26,6 +26,8 @@ export const DISCLAIMER =
 export const PLATFORM_NOTE =
   "免費下載・iOS 18.2 以上・為 iPhone 設計，iPad 與 Apple Silicon Mac 亦可安裝使用";
 
+export const APP_RATING = { value: "4.8", count: 18 };
+
 export const LINKS = {
   courseSystem: "https://course.ntutbox.com",
   status: "https://status.ntutbox.com",
@@ -90,7 +92,7 @@ export type MinorFeature = { title: string; description: string; badge?: string 
 export const MORE_FEATURES: MinorFeature[] = [
   {
     title: "Live Activity 動態島",
-    description: "上課前自動顯示課程資訊，整堂課倒數與進度即時更新。",
+    description: "上課前自動顯示課程資訊，整堂課倒數與進度即時更新，逐步完善中。",
     badge: "開發中",
   },
   { title: "課前通知", description: "每週自動排程提醒，沒開 App 也準時通知上課。" },

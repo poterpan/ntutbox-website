@@ -14,7 +14,12 @@ export function Ecosystem() {
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
         {ECOSYSTEM.map((s) => (
           <GlassCard key={s.title} className="rounded-2xl p-0">
-            <a href={s.href} className="group block p-6">
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block p-6"
+            >
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-[var(--ink)]">{s.title}</h3>
                 <ArrowUpRight

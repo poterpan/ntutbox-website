@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { APP_NAME, APP_TAGLINE, PLATFORM_NOTE } from "@/content/site";
+import { APP_NAME, APP_RATING, APP_TAGLINE, PLATFORM_NOTE } from "@/content/site";
 import { AppStoreButton } from "@/components/site/app-store-button";
 
 function PhoneFrame({ children }: { children: ReactNode }) {
@@ -37,7 +37,12 @@ export function Hero() {
             沒有帳號？先逛逛 →
           </a>
         </div>
-        <p className="mt-5 text-[13px] text-[var(--ink-faint)]">{PLATFORM_NOTE}</p>
+        <p className="mt-5 text-[13px] text-[var(--ink-faint)]">
+          <span className="font-medium text-[var(--ink-soft)]">
+            App Store {APP_RATING.value} ★（{APP_RATING.count} 則評分）
+          </span>
+          ・{PLATFORM_NOTE}
+        </p>
       </div>
       <PhoneFrame>
         <Image

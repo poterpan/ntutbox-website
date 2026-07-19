@@ -1,6 +1,7 @@
 import {
   APP_NAME,
   APP_NAME_EN,
+  APP_RATING,
   APP_STORE_URL,
   SITE_DESCRIPTION,
   SITE_URL,
@@ -20,7 +21,11 @@ const jsonLd = {
   operatingSystem: "iOS",
   applicationCategory: "EducationApplication",
   offers: { "@type": "Offer", price: "0", priceCurrency: "TWD" },
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "18" },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: APP_RATING.value,
+    ratingCount: String(APP_RATING.count),
+  },
   url: SITE_URL,
   downloadUrl: APP_STORE_URL,
 };

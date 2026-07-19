@@ -28,6 +28,8 @@ export function SiteHeader() {
           ))}
           <a
             href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-1 hidden rounded-full bg-[var(--accent)] px-4 py-1.5 text-sm font-medium text-white sm:block"
           >
             下載

@@ -5,6 +5,8 @@ export function AppStoreButton({ className }: { className?: string }) {
   return (
     <a
       href={APP_STORE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         "inline-flex items-center gap-2.5 rounded-xl bg-[var(--accent)] px-5 py-3",
         "text-[15px] font-medium text-white shadow-lg shadow-[var(--accent)]/25",
