@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers — Static Assets only（無 Worker script）。
+  // AASA 與 /share/* 由 ntutbox-edge 以精確 route 服務，本 Worker 不碰（spec §5）。
+  // 部署：pnpm build && pnpm deploy；正式網域 ntutbox.com 於 Phase 2 在 Dashboard 綁定。
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ntutbox-website",
+  "compatibility_date": "2026-07-19",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
