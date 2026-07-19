@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { APP_NAME, APP_STORE_URL, LINKS } from "@/content/site";
+import { APP_NAME, APP_STORE_CAMPAIGN_URL, LINKS } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 /* 更多服務在窄螢幕收起，把空間讓給排課系統推廣入口 */
@@ -46,7 +46,7 @@ export function SiteHeader() {
             <ArrowUpRight className="size-3.5" aria-hidden />
           </a>
           <a
-            href={APP_STORE_URL}
+            href={APP_STORE_CAMPAIGN_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-1 hidden rounded-full bg-[var(--accent)] px-4 py-1.5 text-sm font-medium text-white sm:block"

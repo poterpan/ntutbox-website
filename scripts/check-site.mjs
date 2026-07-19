@@ -56,6 +56,7 @@ const PAGE_ASSERTIONS = {
     "github.com/poterpan/ntutbox-template-api",
     // Landing（Task 5）
     "apps.apple.com/tw/app/id6753217696",
+    "ct=website", // 下載入口需帶 campaign 參數（App 分析歸因）
     "提供北科學生方便的校務體驗",
     "iPad 與 Apple Silicon Mac 亦可安裝使用",
     "訪客模式",
