@@ -39,7 +39,7 @@ export function Hero() {
         </div>
         <p className="mt-5 text-[13px] text-[var(--ink-faint)]">
           <span className="font-medium text-[var(--ink-soft)]">
-            App Store {APP_RATING.value} ★（{APP_RATING.count} 則評分）
+            App Store {APP_RATING.value} ★
           </span>
           ・{PLATFORM_NOTE}
         </p>

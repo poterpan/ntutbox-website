@@ -63,7 +63,7 @@ const PAGE_ASSERTIONS = {
     "application/ld+json",
     "期末預選選課",
     "開發中",
-    "則評分",
+    "★", // hero 可見評分（React SSR 會在插值間插 <!-- -->，勿用完整句斷言）
     // SEO（Task 8）
     'property="og:image"',
     "北科盒子 NTUT Box — 北科大學生的智慧課表 App",
