@@ -7,6 +7,9 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 
+# wrangler 本機快取
+.wrangler/
+
 # misc
 .DS_Store
 *.log
