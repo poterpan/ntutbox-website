@@ -21,7 +21,7 @@ function allHtmlFiles(dir = OUT, acc = []) {
 }
 
 // ── 1. 必要檔案（隨任務增長）────────────────────────────
-const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "privacy/index.html", "support/index.html"];
+const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "privacy/index.html", "support/index.html", "404.html", "sitemap.xml", "robots.txt"];
 for (const f of REQUIRED_FILES) if (!exists(f)) fail(`缺少必要檔案 out/${f}`);
 
 const shots = exists("screenshots")
@@ -60,6 +60,13 @@ const PAGE_ASSERTIONS = {
     "application/ld+json",
     "期末預選選課",
     "開發中",
+    // SEO（Task 8）
+    'property="og:image"',
+    "北科盒子 NTUT Box — 北科大學生的智慧課表 App",
+  ],
+  "404.html": [
+    "找不到",
+    "回首頁",
   ],
   "privacy/index.html": [
     "隱私權政策",
@@ -79,6 +86,18 @@ for (const [page, terms] of Object.entries(PAGE_ASSERTIONS)) {
   const html = read(page);
   for (const t of terms) {
     if (!html.includes(t)) fail(`out/${page} 缺少必要內容「${t}」`);
+  }
+}
+
+// ── 5. Sitemap 驗證（Task 8）──
+if (exists("sitemap.xml")) {
+  const sm = read("sitemap.xml");
+  for (const u of [
+    "https://ntutbox.com/",
+    "https://ntutbox.com/privacy/",
+    "https://ntutbox.com/support/",
+  ]) {
+    if (!sm.includes(`<loc>${u}</loc>`)) fail(`sitemap.xml 缺少 ${u}`);
   }
 }
 
