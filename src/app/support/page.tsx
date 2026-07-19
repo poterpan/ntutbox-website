@@ -6,6 +6,7 @@ import { GlassCard } from "@/components/glass/GlassCard";
 export const metadata: Metadata = {
   title: "支援與常見問題",
   description: "北科盒子使用問題排解、常見問題與聯絡方式。",
+  alternates: { canonical: "/support/" },
 };
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
