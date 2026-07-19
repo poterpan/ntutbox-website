@@ -47,18 +47,20 @@ export const LINKS = {
 };
 
 export type Social = {
-  name: string;
-  /* 顯示在名稱旁的小字：帳號 handle 或用途說明 */
-  label: string;
+  /* 平台名不顯示於畫面（只留 icon），供 aria-label 使用 */
+  platform: string;
+  /* 顯示文字：帳號 handle 或開源專案名 */
+  text: string;
   href: string;
   icon: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
-/* App 本身未開源——GitHub 連到個人頁並標「開源周邊專案」，避免被誤解為 App 原始碼 */
+/* App 本身未開源——GitHub 兩條連結各自標明專案，避免被誤解為 App 原始碼 */
 export const SOCIALS: Social[] = [
-  { name: "Instagram", label: "@ntutbox_official", href: LINKS.instagram, icon: InstagramGlyph },
-  { name: "Threads", label: "@ntutbox_official", href: LINKS.threads, icon: ThreadsGlyph },
-  { name: "GitHub", label: "開源周邊專案", href: LINKS.github, icon: GitHubGlyph },
+  { platform: "Instagram", text: "@ntutbox_official", href: LINKS.instagram, icon: InstagramGlyph },
+  { platform: "Threads", text: "@ntutbox_official", href: LINKS.threads, icon: ThreadsGlyph },
+  { platform: "GitHub", text: "排課系統", href: LINKS.courseGithub, icon: GitHubGlyph },
+  { platform: "GitHub", text: "課表範本 API", href: LINKS.templateApi, icon: GitHubGlyph },
 ];
 
 export type Feature = { icon: LucideIcon; title: string; description: string };

@@ -5,7 +5,6 @@ const NAV_LINKS = [
   { href: "/privacy/", label: "隱私權政策", external: false },
   { href: "/support/", label: "支援與常見問題", external: false },
   { href: LINKS.status, label: "服務狀態", external: true },
-  { href: LINKS.templateApi, label: "課表範本 API", external: true },
 ];
 
 export function SiteFooter() {
@@ -36,20 +35,20 @@ export function SiteFooter() {
             ),
           )}
         </nav>
-        <div className="mt-6 flex flex-wrap gap-x-7 gap-y-3">
+        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
           {SOCIALS.map((s) => (
             <a
-              key={s.name}
+              key={s.href}
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${s.platform}：${s.text}`}
               className="group inline-flex items-center gap-2"
             >
               <s.icon className="size-4 text-[var(--ink-soft)] transition-colors group-hover:text-[var(--accent-ink)]" aria-hidden />
-              <span className="font-medium text-[var(--ink)] transition-colors group-hover:text-[var(--accent-ink)]">
-                {s.name}
+              <span className="text-[13px] text-[var(--ink-soft)] transition-colors group-hover:text-[var(--accent-ink)]">
+                {s.text}
               </span>
-              <span className="text-[13px] text-[var(--ink-faint)]">{s.label}</span>
             </a>
           ))}
         </div>

@@ -42,9 +42,15 @@
 4. **訪客模式 CTA**：「還沒有北科帳號？訪客模式直接體驗」，瞄準準新生。
 5. **生態系服務**：排課系統（course.ntutbox.com，帶「11 學期、32,338 筆開課、每日更新」數字）、
    服務狀態頁（status.ntutbox.com）。範本 API 只放 footer 開發者連結。
-6. **Footer**：非官方免責聲明（必放，全文見 §3）、隱私、支援、狀態頁、課表範本 API、
-   社交列（icon＋文字：Instagram / Threads `@ntutbox_official`、GitHub → 個人頁標「開源周邊專案」
-   ——App 本身未開源，不得誤導）、© PoterPan。（2026-07-19 與使用者確認的修訂）
+6. **Footer**：非官方免責聲明（必放，全文見 §3）、隱私、支援、狀態頁、
+   社交列（icon＋帳號/專案名，不顯示平台名：IG `@ntutbox_official`、Threads `@ntutbox_official`、
+   GitHub「排課系統」→ ntutbox-course、GitHub「課表範本 API」→ ntutbox-template-api
+   ——App 本身未開源，連結各自標明專案避免誤導）、© PoterPan。（2026-07-19 修訂 ×2）
+
+另（2026-07-19 修訂）：**Header** 導覽除 功能/更多服務/支援 外，加「排課系統」推廣入口
+（soft-accent 膠囊、外連 course.ntutbox.com、開學選課季推廣重點；窄螢幕收起「更多服務」讓位）。
+**截圖帶**收進與其他區塊相同的內容寬度（max-w-5xl），兩端以 `.fade-x-edges` 淡出收邊，
+桌面載入時捲軸置中。
 
 ## 2. 視覺與素材
 
