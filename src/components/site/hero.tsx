@@ -39,8 +39,9 @@ export function Hero() {
             </a>
           </div>
           {/* 桌面訪客的下載通道：QR 白卡刻意用固定色（非 token）——
-              掃描對比需要恆白底，明暗主題下外觀一致 */}
-          <div className="hidden flex-col items-center gap-1.5 rounded-2xl bg-white p-2.5 shadow-lg shadow-[rgba(30,41,70,0.15)] lg:flex">
+              掃描對比需要恆白底，明暗主題下外觀一致。
+              hover 放大方便掃描（SVG 向量，放大不失真） */}
+          <div className="relative hidden flex-col items-center gap-1.5 rounded-2xl bg-white p-2.5 shadow-lg shadow-[rgba(30,41,70,0.15)] transition-transform duration-200 ease-out hover:z-10 hover:scale-[1.75] hover:shadow-xl hover:shadow-[rgba(30,41,70,0.25)] lg:flex">
             <div className="relative">
               <img
                 src="/qr-appstore.svg"
