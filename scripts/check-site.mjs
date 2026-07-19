@@ -21,7 +21,7 @@ function allHtmlFiles(dir = OUT, acc = []) {
 }
 
 // ── 1. 必要檔案（隨任務增長）────────────────────────────
-const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "favicon.png", "apple-touch-icon.png", "privacy/index.html", "support/index.html", "404.html", "sitemap.xml", "robots.txt"];
+const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "favicon.png", "apple-touch-icon.png", "qr-appstore.svg", "privacy/index.html", "support/index.html", "404.html", "sitemap.xml", "robots.txt"];
 for (const f of REQUIRED_FILES) if (!exists(f)) fail(`缺少必要檔案 out/${f}`);
 
 const shots = exists("screenshots")
@@ -57,6 +57,8 @@ const PAGE_ASSERTIONS = {
     // Landing（Task 5）
     "apps.apple.com/tw/app/id6753217696",
     "ct=website", // 下載入口需帶 campaign 參數（App 分析歸因）
+    "qr-appstore.svg", // Hero 桌面版 QR
+    "手機掃描下載",
     "提供北科學生方便的校務體驗",
     "iPad 與 Apple Silicon Mac 亦可安裝使用",
     "訪客模式",

@@ -28,14 +28,37 @@ export function Hero() {
           課表、成績、選課、公告——常用的校務功能整合成一個
           App，資料直接來自學校系統，登入一次就緒。
         </p>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <AppStoreButton />
-          <a
-            href="#guest"
-            className="rounded-xl px-5 py-3 text-[15px] font-medium text-[var(--accent-ink)] transition-colors hover:bg-[var(--accent)]/10"
-          >
-            沒有帳號？先逛逛 →
-          </a>
+        <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <AppStoreButton />
+            <a
+              href="#guest"
+              className="rounded-xl px-3 py-3 text-[15px] font-medium text-[var(--accent-ink)] transition-colors hover:bg-[var(--accent)]/10"
+            >
+              沒有帳號？先逛逛 →
+            </a>
+          </div>
+          {/* 桌面訪客的下載通道：QR 白卡刻意用固定色（非 token）——
+              掃描對比需要恆白底，明暗主題下外觀一致 */}
+          <div className="hidden flex-col items-center gap-1.5 rounded-2xl bg-white p-2.5 shadow-lg shadow-[rgba(30,41,70,0.15)] lg:flex">
+            <div className="relative">
+              <img
+                src="/qr-appstore.svg"
+                alt="掃描 QR code 下載北科盒子"
+                width={92}
+                height={92}
+              />
+              <Image
+                src="/app-icon.png"
+                alt=""
+                aria-hidden
+                width={24}
+                height={24}
+                className="absolute inset-0 m-auto size-6 rounded-md"
+              />
+            </div>
+            <p className="text-[11px] font-medium text-slate-500">手機掃描下載</p>
+          </div>
         </div>
         <p className="mt-5 text-[13px] text-[var(--ink-faint)]">
           <span className="font-medium text-[var(--ink-soft)]">

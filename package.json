@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit",
     "check": "node scripts/check-site.mjs",
     "fetch-assets": "node scripts/fetch-assets.mjs",
+    "generate-qr": "node scripts/generate-qr.mjs",
     "preview": "wrangler dev",
     "deploy": "wrangler deploy"
   },
@@ -25,6 +26,7 @@
     "@types/node": "^20.19.43",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "qrcode": "^1.5.4",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.100.0"
