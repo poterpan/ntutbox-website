@@ -1,10 +1,10 @@
-import { APP_STORE_URL } from "@/content/site";
+import { APP_STORE_CAMPAIGN_URL } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 export function AppStoreButton({ className }: { className?: string }) {
   return (
     <a
-      href={APP_STORE_URL}
+      href={APP_STORE_CAMPAIGN_URL}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(

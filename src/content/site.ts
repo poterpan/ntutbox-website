@@ -21,6 +21,10 @@ export const APP_NAME = "北科盒子";
 export const APP_NAME_EN = "NTUT Box";
 export const APP_TAGLINE = "提供北科學生方便的校務體驗";
 export const APP_STORE_URL = "https://apps.apple.com/tw/app/id6753217696";
+/* 官網下載入口統一帶 campaign 參數（App Store Connect → App 分析 → 廣告活動，ct=website）。
+   JSON-LD 的 downloadUrl 維持上面的乾淨網址。 */
+export const APP_STORE_CAMPAIGN_URL =
+  "https://apps.apple.com/app/apple-store/id6753217696?pt=126597733&ct=website&mt=8";
 
 export const SITE_TITLE = "北科盒子 NTUT Box — 北科大學生的智慧課表 App";
 export const SITE_DESCRIPTION =
