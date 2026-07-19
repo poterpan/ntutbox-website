@@ -51,6 +51,8 @@ const PAGE_ASSERTIONS = {
     "/support/",
     "status.ntutbox.com",
     "instagram.com/ntutbox_official",
+    "threads.com/@ntutbox_official",
+    "開源周邊專案",
     // Landing（Task 5）
     "apps.apple.com/tw/app/id6753217696",
     "提供北科學生方便的校務體驗",

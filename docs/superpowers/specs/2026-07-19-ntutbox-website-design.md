@@ -42,7 +42,9 @@
 4. **訪客模式 CTA**：「還沒有北科帳號？訪客模式直接體驗」，瞄準準新生。
 5. **生態系服務**：排課系統（course.ntutbox.com，帶「11 學期、32,338 筆開課、每日更新」數字）、
    服務狀態頁（status.ntutbox.com）。範本 API 只放 footer 開發者連結。
-6. **Footer**：非官方免責聲明（必放，全文見 §3）、隱私、支援、狀態頁、GitHub、IG、© PoterPan。
+6. **Footer**：非官方免責聲明（必放，全文見 §3）、隱私、支援、狀態頁、課表範本 API、
+   社交列（icon＋文字：Instagram / Threads `@ntutbox_official`、GitHub → 個人頁標「開源周邊專案」
+   ——App 本身未開源，不得誤導）、© PoterPan。（2026-07-19 與使用者確認的修訂）
 
 ## 2. 視覺與素材
 

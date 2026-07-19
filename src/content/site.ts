@@ -1,3 +1,4 @@
+import type { ComponentType, SVGProps } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   BookOpen,
@@ -9,6 +10,11 @@ import {
   ListOrdered,
   TrendingUp,
 } from "lucide-react";
+import {
+  GitHubGlyph,
+  InstagramGlyph,
+  ThreadsGlyph,
+} from "@/components/site/social-icons";
 
 export const SITE_URL = "https://ntutbox.com";
 export const APP_NAME = "北科盒子";
@@ -32,11 +38,28 @@ export const LINKS = {
   courseSystem: "https://course.ntutbox.com",
   status: "https://status.ntutbox.com",
   instagram: "https://www.instagram.com/ntutbox_official",
+  threads: "https://www.threads.com/@ntutbox_official",
+  github: "https://github.com/poterpan",
   email: "poter.pan@panspace.me",
   courseGithub: "https://github.com/poterpan/ntutbox-course",
   websiteGithub: "https://github.com/poterpan/ntutbox-website",
   templateApi: "https://github.com/poterpan/ntutbox-template-api",
 };
+
+export type Social = {
+  name: string;
+  /* 顯示在名稱旁的小字：帳號 handle 或用途說明 */
+  label: string;
+  href: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+};
+
+/* App 本身未開源——GitHub 連到個人頁並標「開源周邊專案」，避免被誤解為 App 原始碼 */
+export const SOCIALS: Social[] = [
+  { name: "Instagram", label: "@ntutbox_official", href: LINKS.instagram, icon: InstagramGlyph },
+  { name: "Threads", label: "@ntutbox_official", href: LINKS.threads, icon: ThreadsGlyph },
+  { name: "GitHub", label: "開源周邊專案", href: LINKS.github, icon: GitHubGlyph },
+];
 
 export type Feature = { icon: LucideIcon; title: string; description: string };
 
