@@ -6,6 +6,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ntutbox-website",
   "compatibility_date": "2026-07-19",
+  // Workers Builds CI：main 自動部署；PR 分支以 version preview URL 預覽
+  "preview_urls": true,
   "routes": [
     { "pattern": "ntutbox.com/*", "zone_name": "ntutbox.com" }
   ],

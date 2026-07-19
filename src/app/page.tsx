@@ -6,11 +6,16 @@ import {
   SITE_DESCRIPTION,
   SITE_URL,
 } from "@/content/site";
+import type { Metadata } from "next";
 import { Hero } from "@/components/site/hero";
 import { Features } from "@/components/site/features";
 import { Screenshots } from "@/components/site/screenshots";
 import { GuestCta } from "@/components/site/guest-cta";
 import { Ecosystem } from "@/components/site/ecosystem";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const jsonLd = {
   "@context": "https://schema.org",

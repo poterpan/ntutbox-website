@@ -64,8 +64,9 @@ const PAGE_ASSERTIONS = {
     "期末預選選課",
     "開發中",
     "★", // hero 可見評分（React SSR 會在插值間插 <!-- -->，勿用完整句斷言）
-    // SEO（Task 8）
+    // SEO（Task 8 + canonical 硬化）
     'property="og:image"',
+    'rel="canonical"',
     "北科盒子 NTUT Box — 北科大學生的智慧課表 App",
   ],
   "404.html": [
