@@ -17,22 +17,37 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+// Google「網站名稱」吃 WebSite、應用資訊吃 SoftwareApplication；同站以 @graph 併一份
+//（與 ntutbox-course apps/web/src/app/layout.tsx 同模式）。
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: APP_NAME,
-  alternateName: APP_NAME_EN,
-  description: SITE_DESCRIPTION,
-  operatingSystem: "iOS",
-  applicationCategory: "EducationApplication",
-  offers: { "@type": "Offer", price: "0", priceCurrency: "TWD" },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: APP_RATING.value,
-    ratingCount: String(APP_RATING.count),
-  },
-  url: SITE_URL,
-  downloadUrl: APP_STORE_URL,
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: APP_NAME,
+      alternateName: APP_NAME_EN,
+      inLanguage: "zh-Hant",
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}/#app`,
+      name: APP_NAME,
+      alternateName: APP_NAME_EN,
+      description: SITE_DESCRIPTION,
+      operatingSystem: "iOS",
+      applicationCategory: "EducationApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "TWD" },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: APP_RATING.value,
+        ratingCount: String(APP_RATING.count),
+      },
+      url: SITE_URL,
+      downloadUrl: APP_STORE_URL,
+    },
+  ],
 };
 
 export default function Home() {
