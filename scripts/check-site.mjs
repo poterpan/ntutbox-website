@@ -71,6 +71,10 @@ const PAGE_ASSERTIONS = {
     'property="og:image"',
     'rel="canonical"',
     "北科盒子 NTUT Box — 北科大學生的智慧課表 App",
+    // 站名結構化資料：Google「網站名稱」吃首頁 WebSite，缺了會顯示裸網域
+    '"@type":"WebSite"',
+    '"@type":"SoftwareApplication"',
+    '"alternateName":"NTUT Box"',
   ],
   "404.html": [
     "找不到",
