@@ -8,6 +8,7 @@ import {
 } from "@/content/site";
 import { SiteHeader } from "@/components/site/header";
 import { SiteFooter } from "@/components/site/footer";
+import { AnalyticsProvider } from "@/components/analytics/analytics-consent";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -45,9 +46,12 @@ export default function RootLayout({
   return (
     <html lang="zh-Hant-TW">
       <body className="antialiased">
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
+        {/* 同意 UI 與 GA loader 都掛在這裡；未同意／未設 env 時 provider 只是透明包裝 */}
+        <AnalyticsProvider>
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+        </AnalyticsProvider>
       </body>
     </html>
   );

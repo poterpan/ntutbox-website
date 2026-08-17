@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { APP_NAME, APP_STORE_CAMPAIGN_URL, LINKS } from "@/content/site";
 import { cn } from "@/lib/utils";
+import { TrackedLink } from "@/components/analytics/tracked-link";
 
 /* 更多服務在窄螢幕收起，把空間讓給排課系統推廣入口 */
 const NAV = [
@@ -35,24 +36,27 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          {/* 附屬服務推廣入口：soft-accent 突顯，但不搶「下載」主 CTA */}
-          <a
+          {/* 附屬服務推廣入口：soft-accent 突顯，但不搶「下載」主 CTA。
+              下載鍵不走 AppStoreButton（樣式不同），placement 各自標記 */}
+          <TrackedLink
             href={LINKS.courseSystem}
             target="_blank"
             rel="noopener noreferrer"
+            event={{ name: "course_system_click", params: { placement: "header" } }}
             className="ml-0.5 inline-flex items-center gap-1 rounded-full bg-[var(--accent)]/10 px-3 py-1.5 text-sm font-medium text-[var(--accent-ink)] transition-colors hover:bg-[var(--accent)]/20"
           >
             排課系統
             <ArrowUpRight className="size-3.5" aria-hidden />
-          </a>
-          <a
+          </TrackedLink>
+          <TrackedLink
             href={APP_STORE_CAMPAIGN_URL}
             target="_blank"
             rel="noopener noreferrer"
+            event={{ name: "app_store_click", params: { placement: "header" } }}
             className="ml-1 hidden rounded-full bg-[var(--accent)] px-4 py-1.5 text-sm font-medium text-white sm:block"
           >
             下載
-          </a>
+          </TrackedLink>
         </nav>
       </div>
     </header>

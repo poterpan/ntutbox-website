@@ -11,7 +11,7 @@ export function GuestCta() {
           訪客模式讓你免登入完整體驗 App
           的介面與操作，資料只存在你的裝置上——適合下載前試用，或還沒拿到帳號的準新生。
         </p>
-        <AppStoreButton className="mt-8" />
+        <AppStoreButton className="mt-8" placement="guest_cta" />
       </div>
     </section>
   );

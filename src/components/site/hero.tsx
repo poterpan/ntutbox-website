@@ -30,7 +30,7 @@ export function Hero() {
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-4">
           <div className="flex flex-wrap items-center gap-3">
-            <AppStoreButton />
+            <AppStoreButton placement="hero" />
             <a
               href="#guest"
               className="rounded-xl px-3 py-3 text-[15px] font-medium text-[var(--accent-ink)] transition-colors hover:bg-[var(--accent)]/10"

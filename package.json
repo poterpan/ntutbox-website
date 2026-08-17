@@ -7,7 +7,10 @@
     "dev": "next dev",
     "build": "next build",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "check": "node scripts/check-site.mjs",
+    "verify:consent": "node scripts/verify-consent.mjs",
     "fetch-assets": "node scripts/fetch-assets.mjs",
     "generate-qr": "node scripts/generate-qr.mjs",
     "preview": "wrangler dev",
@@ -23,12 +26,17 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^20.19.43",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.0.5",
+    "jsdom": "^29.1.1",
     "qrcode": "^1.5.4",
     "tailwindcss": "^4",
     "typescript": "^5",
+    "vitest": "^4.1.10",
     "wrangler": "^4.100.0"
   }
 }

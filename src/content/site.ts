@@ -210,6 +210,57 @@ export const FAQ: FaqItem[] = [
   },
 ];
 
+/* ── 成效分析同意（GA4 opt-in）────────────────────────────────────
+   規格：docs/marketing/2026-08-17-ga4-google-ads-handoff.md §4。
+   「同意」與「拒絕」必須同等可見：兩顆按鈕同尺寸同字重，只以文字色區分。 */
+export const ANALYTICS_CONSENT = {
+  title: "可以記錄匿名使用統計嗎？",
+  body:
+    "我們想知道有多少人找到北科盒子、以及哪些入口真的被使用，用來評估宣傳成效。統計是匿名的，不含你的學號、姓名、搜尋文字或課程選擇。",
+  accept: "同意成效分析",
+  decline: "拒絕",
+  policyLabel: "了解我們收集什麼",
+  ariaLabel: "成效分析同意選項",
+};
+
+export const ANALYTICS_SETTINGS = {
+  heading: "分析設定",
+  loading: "正在讀取目前的設定…",
+  unavailable: "本站目前未載入任何分析程式，因此沒有可調整的設定。",
+  grantedState: "目前狀態：已同意匿名成效分析。",
+  deniedState: "目前狀態：已拒絕，本站不會載入 Google Analytics。",
+  unsetState: "目前狀態：尚未選擇。在你選擇「同意」之前，本站不會載入 Google Analytics。",
+  grant: "同意成效分析",
+  revoke: "撤回同意",
+  revokedNote:
+    "已撤回同意，並清除本站可刪除的分析 cookie；後續不再送出任何分析事件。",
+  leftoverNote:
+    "以下 cookie 無法由網頁端刪除，將於到期後自動失效，你也可以在瀏覽器設定中手動清除：",
+};
+
+/* 隱私頁「網站分析與廣告成效」段落。六個 bullet 對應規格 §4 的必要涵蓋項目。
+   ⚠️ 對外法律承諾，owner 逐字核可後才可 merge（CLAUDE.md「隱私權政策 = 對外承諾」）。 */
+export const PRIVACY_ANALYTICS = {
+  heading: "網站分析與廣告成效",
+  intro:
+    "本節適用於本網站（ntutbox.com）與排課系統（course.ntutbox.com）。在你明確同意之前，兩站都不會載入 Google 的任何程式、不會建立分析 cookie，也不會發出任何測量請求。",
+  bullets: [
+    "取得你的同意後，我們才使用 Google Analytics 4 統計網站使用情形，並用 Google Ads 衡量廣告成效歸因。",
+    "收集的內容限於：頁面瀏覽、匿名的功能點擊事件（例如點了下載或前往排課系統）、裝置與瀏覽器的概略資訊，以及廣告來源參數。",
+    "使用第一方 cookie 區分造訪來源與工作階段；我們不做廣告個人化，也不做再行銷或建立廣告受眾。",
+    "不收集帳號密碼、學號、姓名、班級、搜尋文字、課程選擇、分享連結內容或匯入 App 的資料。",
+    "你可以拒絕，也可以在同意後隨時於下方「分析設定」撤回；撤回後不再送出任何事件。",
+    "網址在送出前會先清洗：只保留廣告來源參數（utm_*、Google click ID），移除課程、計畫、權杖等其他參數與錨點。",
+  ],
+  googlePolicyIntro: "Google 如何處理這些資料，請參閱",
+  googlePolicyLabel: "Google 隱私權政策",
+  googlePolicyHref: "https://policies.google.com/privacy",
+};
+
+/* 取代舊文「本網站為純靜態頁面，不使用 cookie，不埋設任何追蹤或分析程式」。 */
+export const PRIVACY_WEBSITE_PARAGRAPH =
+  "本網站為靜態頁面，沒有會員系統，也不要求你提供任何個人資料。除上節所述、且需經你同意才啟用的成效分析外，本網站只會在你做出選擇後寫入一個記錄該選擇的 cookie。網站由 Cloudflare 代管，Cloudflare 可能基於安全與效能目的處理必要的連線紀錄。";
+
 export const ECOSYSTEM = [
   {
     title: "北科盒子 排課系統",

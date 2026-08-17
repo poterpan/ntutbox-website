@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { LINKS } from "@/content/site";
+import {
+  ANALYTICS_SETTINGS,
+  LINKS,
+  PRIVACY_ANALYTICS,
+  PRIVACY_WEBSITE_PARAGRAPH,
+} from "@/content/site";
+import { AnalyticsSettings } from "@/components/analytics/analytics-settings";
 
 export const metadata: Metadata = {
   title: "隱私權政策",
@@ -8,7 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy/" },
 };
 
-const UPDATED = "2026-07-19";
+const UPDATED = "2026-08-17";
 
 export default function PrivacyPage() {
   return (
@@ -65,12 +71,34 @@ export default function PrivacyPage() {
           </p>
         </section>
         <section>
-          <h2>本網站</h2>
-          <p className="mt-2">
-            本網站為純靜態頁面，不使用
-            cookie，不埋設任何追蹤或分析程式，也不蒐集任何個人資料。網站由 Cloudflare
-            代管，Cloudflare 可能基於安全與效能目的處理必要的連線紀錄。
+          <h2>{PRIVACY_ANALYTICS.heading}</h2>
+          <p className="mt-2">{PRIVACY_ANALYTICS.intro}</p>
+          <ul className="mt-3 list-disc space-y-2 pl-5">
+            {PRIVACY_ANALYTICS.bullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
+          </ul>
+          <p className="mt-3">
+            {PRIVACY_ANALYTICS.googlePolicyIntro}
+            <a
+              href={PRIVACY_ANALYTICS.googlePolicyHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-1 text-[var(--accent-ink)] underline underline-offset-4"
+            >
+              {PRIVACY_ANALYTICS.googlePolicyLabel}
+            </a>
+            。
           </p>
+        </section>
+        <section>
+          <h2>{ANALYTICS_SETTINGS.heading}</h2>
+          {/* 狀態與按鈕需要讀 cookie，只能在瀏覽器決定 → 客戶端小島 */}
+          <AnalyticsSettings />
+        </section>
+        <section>
+          <h2>本網站</h2>
+          <p className="mt-2">{PRIVACY_WEBSITE_PARAGRAPH}</p>
         </section>
         <section>
           <h2>政策變更</h2>
