@@ -9,7 +9,7 @@ Next.js 16 App Router **全靜態 export**（`output: "export"`）＋ Tailwind 4
 - **`main` = production**。push 到 main 會由 Cloudflare Workers Builds 自動建置部署到 ntutbox.com——
   **禁止直接 push main**，所有變更一律開 PR。
 - PR 分支由 Workers Builds 產生 **version preview URL** 供預覽（`wrangler.jsonc` 已開 `preview_urls`）。
-- Merge 前必須全綠：`pnpm typecheck && pnpm build && pnpm check`。
+- Merge 前必須全綠：`pnpm test && pnpm typecheck && pnpm build && pnpm check`。
 - 除非 CI 故障的緊急情況，不要手動 `pnpm deploy`。
 
 ## 常用命令
@@ -20,15 +20,29 @@ pnpm dev            # http://localhost:3000
 pnpm build          # 靜態 export 到 out/
 pnpm check          # 對 out/ 做內容驗收（文案鐵則、SEO 斷言）—— merge 前必跑
 pnpm typecheck
+pnpm test           # vitest（jsdom）—— merge 前必跑
+pnpm verify:consent # GA4 同意流程的瀏覽器驗收（手動、需自備 playwright，見下）
 pnpm preview        # wrangler dev，本機模擬 Cloudflare 環境
 pnpm fetch-assets   # 重抓 App Store 素材（icon/截圖/OG），僅 App Store 改版時需要
 ```
 
 ## 驗收腳本 `scripts/check-site.mjs`
 
-對 `out/` 靜態輸出做硬斷言：必要檔案、全站禁字、各頁必要內容、sitemap。
+對 `out/` 靜態輸出做硬斷言：必要檔案、全站禁字、各頁必要內容、sitemap，
+以及 **GA4 opt-in 的靜態承諾**（HTML 內不得出現 googletagmanager／google-analytics／`/g/collect`）。
 **新增頁面或改動關鍵文案時，同步增修斷言**（先加斷言看它紅、實作後轉綠）。
 注意：React SSR 會在 JSX 插值間插入 `<!-- -->`，斷言字串不可跨越插值邊界。
+
+## 驗收腳本 `scripts/verify-consent.mjs`（手動，不進 CI）
+
+用真瀏覽器跑完整 GA4 同意生命週期（同意前零 Google 請求 → 同意 → dataLayer 順序 →
+真實 `/g/collect` 不含敏感值 → 撤回 → 拒絕），35 項斷言。單元測試把 `next/script` mock 掉了，
+所以「inline bootstrap 在真瀏覽器裡真的執行」「網路層真的一個請求都沒發」只有這支證得出來。
+
+**刻意不放進 CI、playwright 也不進 devDependencies**：Workers Builds 每次 production build
+都會 `pnpm install`，為一支手動驗收多下載一套瀏覽器不值得。用法（含必要 env）見腳本檔頭；
+`out/` 不是「啟用 GA」的建置時腳本會拒跑，避免全部假通過。
+改動 `src/lib/analytics.ts` 或 `src/components/analytics/*` 後應手動跑一次。
 
 ## 文案鐵則（check-site 會擋，但寫文案時就要知道）
 

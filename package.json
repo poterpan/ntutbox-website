@@ -10,6 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "check": "node scripts/check-site.mjs",
+    "verify:consent": "node scripts/verify-consent.mjs",
     "fetch-assets": "node scripts/fetch-assets.mjs",
     "generate-qr": "node scripts/generate-qr.mjs",
     "preview": "wrangler dev",
