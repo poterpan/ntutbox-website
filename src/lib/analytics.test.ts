@@ -292,7 +292,14 @@ describe("URL sanitizer", () => {
 describe("UTM / click ID allowlist 的字元集與長度", () => {
   it("UTM 去控制字元後保留，超過 128 字元整條丟棄（不截斷）", () => {
     expect(sanitizeUtmValue("google")).toBe("google");
-    expect(sanitizeUtmValue("goo gle")).toBe("google");
+    // 控制字元用 fromCharCode 組。**原始程式碼不得出現 raw control byte**：
+    // 審查時曾因此被 grep 整檔判成 binary 而靜默跳過（由 no-control-bytes.test.ts 把關）。
+    const NUL = String.fromCharCode(0);
+    const UNIT_SEP = String.fromCharCode(0x1f);
+    const DEL = String.fromCharCode(0x7f);
+    expect(sanitizeUtmValue(`goo${NUL}gle`)).toBe("google");
+    expect(sanitizeUtmValue(`goo${UNIT_SEP}gle`)).toBe("google");
+    expect(sanitizeUtmValue(`goo${DEL}gle`)).toBe("google");
     expect(sanitizeUtmValue("a".repeat(128))).toBe("a".repeat(128));
     expect(sanitizeUtmValue("a".repeat(129))).toBeNull();
     expect(sanitizeUtmValue("")).toBeNull();
