@@ -41,6 +41,28 @@ for (const file of allHtmlFiles()) {
   }
 }
 
+// ── 3b. 同意前零 Google 資源（GA4 opt-in 的核心承諾）──
+// 靜態 HTML 裡不得出現任何 Google 測量網域：載入 gtag.js 的元件只在
+// consent === "granted" 時由客戶端 render，prerender 產物必須乾淨。
+// 注意：JS chunk 內出現這些字串是正常的（同意後才執行），這裡只掃 HTML。
+const GOOGLE_TAG_HOSTS = ["googletagmanager.com", "google-analytics.com", "/g/collect"];
+for (const file of allHtmlFiles()) {
+  const html = readFileSync(file, "utf8");
+  for (const host of GOOGLE_TAG_HOSTS) {
+    if (html.includes(host)) fail(`${file} 無條件引用了 Google 測量資源「${host}」（同意前不得載入）`);
+  }
+  // preconnect/dns-prefetch 也算搶跑
+  if (/<link[^>]+(googletagmanager|google-analytics)/.test(html)) {
+    fail(`${file} 有指向 Google 測量網域的 <link> 預連線`);
+  }
+  // 事件參數不得夾帶敏感 query key（規格 §6 禁止清單）
+  for (const key of ["plan=", "payload=", "offering_id="]) {
+    if (html.includes(`gtag`) && html.includes(key)) {
+      fail(`${file} 同時出現 gtag 與敏感參數「${key}」`);
+    }
+  }
+}
+
 // ── 4. 各頁內容斷言（隨任務增長；缺檔已在 §1 報告，這裡跳過）──
 const PAGE_ASSERTIONS = {
   "index.html": [
@@ -88,6 +110,18 @@ const PAGE_ASSERTIONS = {
     "TelemetryDeck",
     "資料保留與刪除",
     "關閉匿名統計",
+    // 網站分析揭露（規格 §4 六項必要涵蓋內容，各取一段不跨插值邊界的字串）
+    "網站分析與廣告成效",
+    "Google Analytics 4",
+    "在你明確同意之前",
+    "第一方 cookie",
+    "不做廣告個人化",
+    "不收集帳號密碼、學號、姓名、班級、搜尋文字、課程選擇",
+    "隨時於下方「分析設定」撤回",
+    "只保留廣告來源參數",
+    "policies.google.com/privacy",
+    // 可撤回同意的入口
+    "分析設定",
   ],
   "support/index.html": [
     "常見問題",
@@ -101,6 +135,19 @@ for (const [page, terms] of Object.entries(PAGE_ASSERTIONS)) {
   const html = read(page);
   for (const t of terms) {
     if (!html.includes(t)) fail(`out/${page} 缺少必要內容「${t}」`);
+  }
+}
+
+// ── 4b. 已作廢的承諾（留著就會與實際行為不符）──
+const PAGE_FORBIDDEN = {
+  // 官網啟用 opt-in GA4 後，舊文「不使用 cookie／不埋設分析程式」不再為真
+  "privacy/index.html": ["不埋設任何追蹤或分析程式", "不蒐集任何個人資料"],
+};
+for (const [page, terms] of Object.entries(PAGE_FORBIDDEN)) {
+  if (!exists(page)) continue;
+  const html = read(page);
+  for (const t of terms) {
+    if (html.includes(t)) fail(`out/${page} 仍含已作廢文案「${t}」`);
   }
 }
 
