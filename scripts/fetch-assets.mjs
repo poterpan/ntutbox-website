@@ -19,7 +19,6 @@ const ICON_BASE =
 const ICON = `${ICON_BASE}/1024x1024bb.png`;
 const FAVICON = `${ICON_BASE}/100x100bb.png`;
 const APPLE_TOUCH_ICON = `${ICON_BASE}/180x180bb.png`;
-const OG = "https://assets.ntutbox.com/og-share.png";
 
 async function grab(url, dest) {
   const res = await fetch(url);
@@ -32,7 +31,6 @@ await mkdir("public/screenshots", { recursive: true });
 await grab(ICON, "public/app-icon.png");
 await grab(FAVICON, "public/favicon.png");
 await grab(APPLE_TOUCH_ICON, "public/apple-touch-icon.png");
-await grab(OG, "public/og.png");
 for (const [name, base] of SHOTS) {
   await grab(`${base}/600x1300bb.webp`, `public/screenshots/${name}.webp`);
 }

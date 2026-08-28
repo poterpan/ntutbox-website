@@ -23,7 +23,7 @@ pnpm typecheck
 pnpm test           # vitest（jsdom）—— merge 前必跑
 pnpm verify:consent # GA4 同意流程的瀏覽器驗收（手動、需自備 playwright，見下）
 pnpm preview        # wrangler dev，本機模擬 Cloudflare 環境
-pnpm fetch-assets   # 重抓 App Store 素材（icon/截圖/OG），僅 App Store 改版時需要
+pnpm fetch-assets   # 重抓 App Store 素材（icon/截圖），僅 App Store 改版時需要
 ```
 
 ## 驗收腳本 `scripts/check-site.mjs`
