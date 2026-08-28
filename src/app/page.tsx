@@ -10,6 +10,7 @@ import {
 import type { Metadata } from "next";
 import { Hero } from "@/components/site/hero";
 import { Features } from "@/components/site/features";
+import { Comparison } from "@/components/site/comparison";
 import { Screenshots } from "@/components/site/screenshots";
 import { GuestCta } from "@/components/site/guest-cta";
 import { Ecosystem } from "@/components/site/ecosystem";
@@ -74,6 +75,7 @@ export default function Home() {
       />
       <Hero />
       <Features />
+      <Comparison />
       <Screenshots />
       <GuestCta />
       <Ecosystem />

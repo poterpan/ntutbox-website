@@ -21,7 +21,7 @@ function allHtmlFiles(dir = OUT, acc = []) {
 }
 
 // ── 1. 必要檔案（隨任務增長）────────────────────────────
-const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "favicon.png", "apple-touch-icon.png", "qr-appstore.svg", "privacy/index.html", "support/index.html", "404.html", "sitemap.xml", "robots.txt"];
+const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "favicon.png", "apple-touch-icon.png", "qr-appstore.svg", "privacy/index.html", "support/index.html", "about/index.html", "guide/selection/index.html", "404.html", "sitemap.xml", "robots.txt"];
 for (const f of REQUIRED_FILES) if (!exists(f)) fail(`缺少必要檔案 out/${f}`);
 
 const shots = exists("screenshots")
@@ -132,6 +132,17 @@ const PAGE_ASSERTIONS = {
     "instagram.com/ntutbox_official",
     "poter.pan@panspace.me",
     "status.ntutbox.com",
+    "完全免費", // FAQ 擴充（Task：6→13 條）
+  ],
+  "about/index.html": [
+    "關於開發者",
+    "PoterPan",
+    "Apple 原生",
+  ],
+  "guide/selection/index.html": [
+    "選課指南",
+    "course.ntutbox.com",
+    "排課系統",
   ],
 };
 for (const [page, terms] of Object.entries(PAGE_ASSERTIONS)) {
@@ -162,6 +173,8 @@ if (exists("sitemap.xml")) {
     "https://ntutbox.com/",
     "https://ntutbox.com/privacy/",
     "https://ntutbox.com/support/",
+    "https://ntutbox.com/about/",
+    "https://ntutbox.com/guide/selection/",
   ]) {
     if (!sm.includes(`<loc>${u}</loc>`)) fail(`sitemap.xml 缺少 ${u}`);
   }
