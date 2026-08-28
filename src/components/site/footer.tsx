@@ -20,7 +20,7 @@ export function SiteFooter() {
                 href={l.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--ink-soft)] transition-colors hover:text-[var(--accent-ink)]"
+                className="inline-block py-1 text-[var(--ink-soft)] transition-colors hover:text-[var(--accent-ink)]"
               >
                 {l.label}
               </a>
@@ -28,7 +28,7 @@ export function SiteFooter() {
               <Link
                 key={l.label}
                 href={l.href}
-                className="text-[var(--ink-soft)] transition-colors hover:text-[var(--accent-ink)]"
+                className="inline-block py-1 text-[var(--ink-soft)] transition-colors hover:text-[var(--accent-ink)]"
               >
                 {l.label}
               </Link>
@@ -43,7 +43,7 @@ export function SiteFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${s.platform}：${s.text}`}
-              className="group inline-flex items-center gap-2"
+              className="group inline-flex items-center gap-2 py-1"
             >
               <s.icon className="size-4 text-[var(--ink-soft)] transition-colors group-hover:text-[var(--accent-ink)]" aria-hidden />
               <span className="text-[13px] text-[var(--ink-soft)] transition-colors group-hover:text-[var(--accent-ink)]">
