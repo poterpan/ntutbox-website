@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import { Activity, Mail } from "lucide-react";
-import { FAQ, LINKS } from "@/content/site";
+import { APP_NAME, FAQ, LINKS, SITE_URL } from "@/content/site";
 import { GlassCard } from "@/components/glass/GlassCard";
 
 export const metadata: Metadata = {
   title: "支援與常見問題",
   description: "北科盒子使用問題排解、常見問題與聯絡方式。",
   alternates: { canonical: "/support/" },
+  openGraph: {
+    title: `支援與常見問題 — ${APP_NAME}`,
+    description: "北科盒子使用問題排解、常見問題與聯絡方式。",
+    url: `${SITE_URL}/support/`,
+  },
 };
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {

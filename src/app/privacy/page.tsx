@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import {
   ANALYTICS_SETTINGS,
+  APP_NAME,
   LINKS,
   PRIVACY_ANALYTICS,
   PRIVACY_WEBSITE_PARAGRAPH,
+  SITE_URL,
 } from "@/content/site";
 import { AnalyticsSettings } from "@/components/analytics/analytics-settings";
 
@@ -12,6 +14,12 @@ export const metadata: Metadata = {
   description:
     "北科盒子（NTUT Box）隱私權政策：帳號密碼僅儲存於裝置本地，不上傳任何第三方伺服器。",
   alternates: { canonical: "/privacy/" },
+  openGraph: {
+    title: `隱私權政策 — ${APP_NAME}`,
+    description:
+      "北科盒子（NTUT Box）隱私權政策：帳號密碼僅儲存於裝置本地，不上傳任何第三方伺服器。",
+    url: `${SITE_URL}/privacy/`,
+  },
 };
 
 const UPDATED = "2026-08-17";
