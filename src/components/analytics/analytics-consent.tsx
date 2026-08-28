@@ -129,7 +129,7 @@ function ConsentBanner() {
           </button>
           <Link
             href="/privacy/"
-            className="ml-auto text-[13px] text-[var(--ink-faint)] underline underline-offset-4 transition-colors hover:text-[var(--accent-ink)]"
+            className="ml-auto py-1.5 text-[13px] text-[var(--ink-faint)] underline underline-offset-4 transition-colors hover:text-[var(--accent-ink)]"
           >
             {ANALYTICS_CONSENT.policyLabel}
           </Link>

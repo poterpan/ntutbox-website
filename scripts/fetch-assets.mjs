@@ -16,7 +16,7 @@ const SHOTS = [
 ];
 const ICON_BASE =
   "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c5/62/65/c562654f-eb43-f780-0692-f015ec00367e/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png";
-const ICON = `${ICON_BASE}/1024x1024bb.png`;
+const ICON = `${ICON_BASE}/128x128bb.png`;
 const FAVICON = `${ICON_BASE}/100x100bb.png`;
 const APPLE_TOUCH_ICON = `${ICON_BASE}/180x180bb.png`;
 const OG = "https://assets.ntutbox.com/og-share.png";

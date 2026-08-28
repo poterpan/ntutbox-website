@@ -37,6 +37,7 @@ export function Screenshots() {
                 alt={s.alt}
                 width={600}
                 height={1300}
+                loading="eager"
                 className="h-auto w-full rounded-2xl"
               />
             </div>

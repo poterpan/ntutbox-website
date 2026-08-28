@@ -97,6 +97,10 @@ const PAGE_ASSERTIONS = {
     '"@type":"WebSite"',
     '"@type":"SoftwareApplication"',
     '"alternateName":"NTUT Box"',
+    // schema 枚舉與型別硬化：applicationCategory 需為合法枚舉值、ratingCount 為數字
+    '"applicationCategory":"EducationalApplication"',
+    '"contentRating":"4+"',
+    '"ratingCount":18',
   ],
   "404.html": [
     "找不到",
