@@ -5,6 +5,7 @@ import { AppStoreButton } from "@/components/site/app-store-button";
 
 /** spec §3 的 wire format。這裡只宣告落地頁用得到的部分。 */
 interface PlanPayloadHead {
+  u?: string;
   t?: string;
   c?: unknown[];
 }
@@ -50,6 +51,10 @@ async function readHandoff(hash: string): Promise<{ count: number; termKey: stri
     let bytes = base64urlToBytes(encoded);
     if (p.get("e") === "1") bytes = await inflateRaw(bytes);
     const payload = JSON.parse(new TextDecoder().decode(bytes)) as PlanPayloadHead;
+    // 學校 provenance 在接收端強制（spec §3〈學校 provenance 在接收端強制〉）：
+    // 這個落地頁只認得出北科的資料，缺欄或不是 "ntut" 一律當成無法解讀，
+    // 不能渲染出這頁沒資格保證來源的標題。
+    if (payload.u !== "ntut") return null;
     const count = Array.isArray(payload.c) ? payload.c.length : 0;
     if (count <= 0) return null;
     return { count, termKey: typeof payload.t === "string" ? payload.t : "" };
