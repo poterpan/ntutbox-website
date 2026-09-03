@@ -271,7 +271,7 @@ export function sanitizeReferrer(raw: string): string {
 
 export const SITE_SURFACE = "website";
 
-export const APP_STORE_PLACEMENTS = ["hero", "header", "guest_cta"] as const;
+export const APP_STORE_PLACEMENTS = ["hero", "header", "guest_cta", "plan"] as const;
 export const COURSE_SYSTEM_PLACEMENTS = ["header", "ecosystem"] as const;
 /** 固定 enum；禁止把使用者輸入或原始 gclid 當 campaign_key。 */
 export const CAMPAIGN_KEYS = ["google_ads_1151"] as const;
