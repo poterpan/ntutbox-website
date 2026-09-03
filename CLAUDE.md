@@ -76,6 +76,21 @@ pnpm fetch-assets   # 重抓 App Store 素材（icon/截圖），僅 App Store �
   AASA 一斷，App 的 Universal Links 與密碼自動填入就壞。
 - 根網域的 DNS 錨點是 ntutbox-edge 上的 `ntutbox.com` Custom Domain（歷史配置，勿移除），
   本站以 zone route 疊上接手其餘路徑（route 優先權實測高於 Custom Domain）。
+  完整拓撲表與優先序規則見 `ntutbox-edge/docs/zone-topology.md`。
+- **不要在本 repo 新增 `public/.well-known/apple-app-site-association`。**
+  edge 的 `ntutbox.com/.well-known/*` route 優先權高於本站的萬用 route，會
+  永遠贏過本站放的任何同名檔案——所以那份檔案會**服務給沒有人**，是純粹的
+  死碼。危險之處在於它躺在**大家真的會去編輯的 repo 裡**：本站每次 push
+  `main` 就自動上線，`ntutbox-edge` 是手動部署、少有人碰。有人會為了「修
+  AASA」在這裡加或改這個檔案、驗證不到任何效果（因為 edge 那份才是實際生
+  效的）、然後 ship 一個 no-op。**這不是下線而是靜默陷阱。**
+
+## ⚠️ 部署前必讀
+
+本 repo 部署到 `ntutbox.com` zone，而該 zone 每個 hostname 都由 route ＋
+Custom Domain 兩套機制共同擁有，交互作用不在任何單一設定檔裡。部署前先讀
+`ntutbox-edge/docs/zone-topology.md`（受版控的唯一真相來源），並在 Cloudflare
+dashboard 確認實際 route 表。
 
 ## 已知雷區（實測記錄）
 
