@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { APP_STORE_URL } from "@/content/site";
+import { AppStoreButton } from "@/components/site/app-store-button";
 
 /** spec §3 的 wire format。這裡只宣告落地頁用得到的部分。 */
 interface PlanPayloadHead {
@@ -87,12 +87,9 @@ export function PlanHandoff() {
           : "這個連結要在安裝了「北科盒子」App 的 iPhone 上開啟。"}
       </p>
 
-      <a
-        href={APP_STORE_URL}
-        className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-[15px] font-semibold text-white"
-      >
-        下載北科盒子
-      </a>
+      {/* placement="plan"：報表要能分辨這個入口帶來的下載（審查回合 1 修正，spec §6）。
+          元件內部已用 APP_STORE_CAMPAIGN_URL（帶 ct=website），這裡不需另外指定網址。 */}
+      <AppStoreButton placement="plan" className="mt-8" />
 
       <p className="mt-6 text-[13px] leading-6 text-[var(--ink-faint)]">
         課表內容放在網址的 fragment 裡，不會傳送到我們的伺服器。
