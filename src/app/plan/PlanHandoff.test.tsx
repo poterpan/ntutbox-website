@@ -72,10 +72,11 @@ function setHash(hash: string) {
 }
 
 describe("PlanHandoff", () => {
-  it("合法 payload（壓縮）render 出課數與學期標題", async () => {
+  it("合法 payload（壓縮）render 出課數與學期，且兩者分行", async () => {
     setHash(await buildHash(validPayload(), { compressed: true }));
     render(<PlanHandoff />);
-    expect(await screen.findByText("115-1 2 門預排課程")).toBeInTheDocument();
+    expect(await screen.findByText("2 門預排課程")).toBeInTheDocument();
+    expect(screen.getByText("115 學年度第 1 學期")).toBeInTheDocument();
     expect(
       screen.getByText(
         "這份預排課表要在「北科盒子」App 裡開啟。安裝後再點一次原本的連結，就會直接匯入成草稿。",
@@ -83,10 +84,28 @@ describe("PlanHandoff", () => {
     ).toBeInTheDocument();
   });
 
+  it("學期與門數不併成一行——`115-1 2 門` 會被讀成「12 門」", async () => {
+    setHash(await buildHash(validPayload(), { compressed: true }));
+    render(<PlanHandoff />);
+    await screen.findByText("2 門預排課程");
+    // 這是實機回報的可讀性缺陷（2026-09-04）：`115-1` 後面緊接門數時，
+    // 中間那個 `1 2` 看起來像 12。斷言鎖死舊字串不得再出現。
+    expect(screen.queryByText("115-1 2 門預排課程")).not.toBeInTheDocument();
+    expect(screen.queryByText(/115-1\s*\d+\s*門/)).not.toBeInTheDocument();
+  });
+
+  it("認不出格式的 termKey 原樣顯示，不猜也不壞掉", async () => {
+    setHash(await buildHash(validPayload({ t: "民國一一五上" }), { compressed: true }));
+    render(<PlanHandoff />);
+    expect(await screen.findByText("2 門預排課程")).toBeInTheDocument();
+    expect(screen.getByText("民國一一五上")).toBeInTheDocument();
+  });
+
   it("合法 payload（未壓縮 e=0）走同一條解碼路徑，一樣 render 出標題", async () => {
     setHash(await buildHash(validPayload(), { compressed: false }));
     render(<PlanHandoff />);
-    expect(await screen.findByText("115-1 2 門預排課程")).toBeInTheDocument();
+    expect(await screen.findByText("2 門預排課程")).toBeInTheDocument();
+    expect(screen.getByText("115 學年度第 1 學期")).toBeInTheDocument();
   });
 
   it("u 不是 ntut（外校／偽造來源）退回通用文案，不渲染資料衍生的標題", async () => {

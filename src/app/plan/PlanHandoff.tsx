@@ -40,6 +40,18 @@ async function inflateRaw(bytes: Uint8Array<ArrayBuffer>): Promise<Uint8Array<Ar
   return new Uint8Array(await new Response(stream).arrayBuffer());
 }
 
+/**
+ * `"115-1"` → `"115 學年度第 1 學期"`。
+ *
+ * 認不出來的格式原樣回傳，不猜也不丟錯：這個字串來自網址 fragment，
+ * 是使用者可以隨手改的輸入，落地頁沒有理由為它壞掉。
+ */
+function formatTermKey(termKey: string | undefined): string {
+  if (!termKey) return "";
+  const m = termKey.match(/^(\d{2,3})-(\d)$/);
+  return m ? `${m[1]} 學年度第 ${m[2]} 學期` : termKey;
+}
+
 async function readHandoff(hash: string): Promise<{ count: number; termKey: string } | null> {
   const raw = hash.startsWith("#") ? hash.slice(1) : hash;
   if (!raw) return null;
@@ -79,12 +91,17 @@ export function PlanHandoff() {
     };
   }, []);
 
-  const heading = info
-    ? `${info.termKey ? `${info.termKey} ` : ""}${info.count} 門預排課程`
-    : "預排課表";
+  // 學期與門數**不能併在同一行**：`115-1` 後面緊接門數會變成「115-1 2 門」，
+  // 那個 `1 2` 讀起來像「12 門」。把學年度／學期展開成中文，再讓它獨立成一行，
+  // 數字之間就有文字隔開，歧義從結構上消失（不是靠加空白或分隔點掩蓋）。
+  const termLabel = formatTermKey(info?.termKey);
+  const heading = info ? `${info.count} 門預排課程` : "預排課表";
 
   return (
     <div className="mx-auto max-w-xl px-6 pb-24 pt-32">
+      {termLabel ? (
+        <p className="mb-2 text-sm font-medium text-[var(--ink-soft)]">{termLabel}</p>
+      ) : null}
       <h1 className="text-3xl font-bold tracking-tight text-[var(--ink)]">{heading}</h1>
       <p className="mt-3 leading-7 text-[var(--ink-soft)]">
         {ready && info
