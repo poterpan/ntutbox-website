@@ -45,7 +45,7 @@ export function SiteHeader() {
             event={{ name: "course_system_click", params: { placement: "header" } }}
             className="ml-0.5 inline-flex items-center gap-1 rounded-full bg-[var(--accent)]/10 px-3 py-1.5 text-sm font-medium text-[var(--accent-ink)] transition-colors hover:bg-[var(--accent)]/20"
           >
-            排課系統
+            北科排課
             <ArrowUpRight className="size-3.5" aria-hidden />
           </TrackedLink>
           <TrackedLink
