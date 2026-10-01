@@ -291,7 +291,7 @@ export const PRIVACY_WEBSITE_PARAGRAPH =
 
 export const ECOSYSTEM = [
   {
-    title: "北科盒子 排課系統",
+    title: "北科排課｜北科盒子 排課系統",
     href: LINKS.courseSystem,
     display: "course.ntutbox.com",
     description:
@@ -377,5 +377,5 @@ export const GUIDE = {
       body: "選課結果確認後，課表自動同步到 App；「選課確認」等一次性手續也能在 App 內完成。",
     },
   ],
-  courseLink: { label: "前往排課系統", href: LINKS.courseSystem },
+  courseLink: { label: "前往北科排課", href: LINKS.courseSystem },
 };
