@@ -254,16 +254,16 @@ export const ANALYTICS_CONSENT = {
 export const ANALYTICS_SETTINGS = {
   heading: "分析設定",
   loading: "正在讀取目前的設定…",
-  unavailable: "本站目前未載入任何分析程式，因此沒有可調整的設定。",
+  unavailable: "本網站目前未載入任何分析程式，因此無可調整之設定。",
   grantedState: "目前狀態：已同意匿名成效分析。",
-  deniedState: "目前狀態：已拒絕，本站不會載入 Google Analytics。",
-  unsetState: "目前狀態：尚未選擇。在你選擇「同意」之前，本站不會載入 Google Analytics。",
+  deniedState: "目前狀態：已拒絕，本網站不會載入 Google Analytics。",
+  unsetState: "目前狀態：尚未選擇。於您選擇「同意」之前，本網站不會載入 Google Analytics。",
   grant: "同意成效分析",
   revoke: "撤回同意",
   revokedNote:
-    "已撤回同意，並清除本站可刪除的分析 cookie；後續不再送出任何分析事件。",
+    "已撤回同意，並清除本網站可刪除之分析 cookie；此後不再送出任何分析事件。",
   leftoverNote:
-    "以下 cookie 無法由網頁端刪除，將於到期後自動失效，你也可以在瀏覽器設定中手動清除：",
+    "下列 cookie 無法由網頁端刪除，將於到期後自動失效，您亦得於瀏覽器設定中手動清除：",
 };
 
 /* 隱私頁「網站分析與廣告成效」段落。六個 bullet 對應規格 §4 的必要涵蓋項目。
@@ -271,14 +271,14 @@ export const ANALYTICS_SETTINGS = {
 export const PRIVACY_ANALYTICS = {
   heading: "網站分析與廣告成效",
   intro:
-    "本節適用於本網站（ntutbox.com）與排課系統（course.ntutbox.com）。在你明確同意之前，兩站都不會載入 Google 的任何程式、不會建立分析 cookie，也不會發出任何測量請求。",
+    "本節適用於本網站（ntutbox.com）及排課系統（course.ntutbox.com）。於您明確同意之前，兩站均不會載入 Google 之任何程式、不會建立分析 cookie，亦不會發出任何測量請求。",
   bullets: [
-    "取得你的同意後，我們才使用 Google Analytics 4 統計網站使用情形，並用 Google Ads 衡量廣告成效歸因。",
-    "收集的內容限於：頁面瀏覽、匿名的功能點擊事件（例如點了下載或前往排課系統）、裝置與瀏覽器的概略資訊，以及廣告來源參數。",
-    "使用第一方 cookie 區分造訪來源與工作階段；我們不做廣告個人化，也不做再行銷或建立廣告受眾。",
+    "經您同意後，兩站始使用 Google Analytics 4 統計網站使用情形，並使用 Google Ads 衡量廣告成效歸因。",
+    "蒐集之內容限於：頁面瀏覽、匿名之功能點擊事件（例如點選下載或前往排課系統）、裝置與瀏覽器之概略資訊，以及廣告來源參數。",
+    "使用第一方 cookie 區分造訪來源與工作階段；兩站不做廣告個人化，亦不做再行銷或建立廣告受眾。",
     "不收集帳號密碼、學號、姓名、班級、搜尋文字、課程選擇、分享連結內容或匯入 App 的資料。",
-    "你可以拒絕，也可以在同意後隨時於下方「分析設定」撤回；撤回後不再送出任何事件。",
-    "網址在送出前會先清洗：只保留廣告來源參數（utm_*、Google click ID），移除課程、計畫、權杖等其他參數與錨點。",
+    "您得拒絕，亦得於同意後隨時於下方「分析設定」撤回；撤回後不再送出任何事件。",
+    "網址於送出前先行清洗：只保留廣告來源參數（utm_*、Google click ID），移除課程、計畫、權杖等其他參數與錨點。",
   ],
   googlePolicyIntro: "Google 如何處理這些資料，請參閱",
   googlePolicyLabel: "Google 隱私權政策",
@@ -287,7 +287,7 @@ export const PRIVACY_ANALYTICS = {
 
 /* 取代舊文「本網站為純靜態頁面，不使用 cookie，不埋設任何追蹤或分析程式」。 */
 export const PRIVACY_WEBSITE_PARAGRAPH =
-  "本網站為靜態頁面，沒有會員系統，也不要求你提供任何個人資料。除上節所述、且需經你同意才啟用的成效分析外，本網站只會在你做出選擇後寫入一個記錄該選擇的 cookie。網站由 Cloudflare 代管，Cloudflare 可能基於安全與效能目的處理必要的連線紀錄。";
+  "本網站為靜態頁面，不要求您提供任何個人資料。除上節所述、經您同意始啟用之成效分析外，本網站僅於您做出選擇後寫入一個記錄該選擇之 cookie。本網站由 Cloudflare 代管，Cloudflare 可能基於安全與效能目的處理必要之連線紀錄。";
 
 export const ECOSYSTEM = [
   {

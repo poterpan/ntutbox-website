@@ -109,7 +109,7 @@ const PAGE_ASSERTIONS = {
   ],
   "privacy/index.html": [
     "隱私權政策",
-    "Keychain",
+    "僅安全儲存於您的裝置",
     "第三方伺服器",
     "最後更新",
     "TelemetryDeck",
@@ -118,7 +118,7 @@ const PAGE_ASSERTIONS = {
     // 網站分析揭露（規格 §4 六項必要涵蓋內容，各取一段不跨插值邊界的字串）
     "網站分析與廣告成效",
     "Google Analytics 4",
-    "在你明確同意之前",
+    "於您明確同意之前",
     "第一方 cookie",
     "不做廣告個人化",
     "不收集帳號密碼、學號、姓名、班級、搜尋文字、課程選擇",
@@ -131,7 +131,7 @@ const PAGE_ASSERTIONS = {
     "北科盒子會員",
     "學號與信箱不會顯示給其他使用者",
     "上傳後 90 天自動刪除",
-    "App Attest",
+    "裝置驗證",
     "刪除會員資料",
     "個人資料保護法",
     "/terms/",
@@ -143,6 +143,7 @@ const PAGE_ASSERTIONS = {
     "封鎖",
     "停權",
     "準據法",
+    "收到檢舉後 24 小時內處置",
     "/privacy/",
   ],
   "support/index.html": [
