@@ -12,12 +12,12 @@ import { AnalyticsSettings } from "@/components/analytics/analytics-settings";
 export const metadata: Metadata = {
   title: "隱私權政策",
   description:
-    "北科盒子（NTUT Box）隱私權政策：帳號密碼僅儲存於裝置本地，不上傳任何第三方伺服器。",
+    "北科盒子（NTUTBox）隱私權政策：帳號密碼僅儲存於裝置本地，不上傳任何第三方伺服器。",
   alternates: { canonical: "/privacy/" },
   openGraph: {
     title: `隱私權政策 — ${APP_NAME}`,
     description:
-      "北科盒子（NTUT Box）隱私權政策：帳號密碼僅儲存於裝置本地，不上傳任何第三方伺服器。",
+      "北科盒子（NTUTBox）隱私權政策：帳號密碼僅儲存於裝置本地，不上傳任何第三方伺服器。",
     url: `${SITE_URL}/privacy/`,
   },
 };

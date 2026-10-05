@@ -92,11 +92,11 @@ const PAGE_ASSERTIONS = {
     // SEO（Task 8 + canonical 硬化）
     'property="og:image"',
     'rel="canonical"',
-    "北科盒子 NTUT Box — 北科大學生的智慧課表 App",
+    "北科盒子 NTUTBox — 北科大學生的智慧課表 App",
     // 站名結構化資料：Google「網站名稱」吃首頁 WebSite，缺了會顯示裸網域
     '"@type":"WebSite"',
     '"@type":"SoftwareApplication"',
-    '"alternateName":"NTUT Box"',
+    '"alternateName":"NTUTBox"',
     // schema 枚舉與型別硬化：applicationCategory 需為合法枚舉值、ratingCount 為數字
     '"applicationCategory":"EducationalApplication"',
     '"contentRating":"4+"',

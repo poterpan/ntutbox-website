@@ -4,7 +4,7 @@
 
 # 北科盒子官網
 
-**[ntutbox.com](https://ntutbox.com)** — 北科大學生的智慧課表 App「北科盒子（NTUT Box）」官方網站
+**[ntutbox.com](https://ntutbox.com)** — 北科大學生的智慧課表 App「北科盒子（NTUTBox）」官方網站
 
 [![App Store](https://img.shields.io/badge/App_Store-下載-0D96F6?logo=apple&logoColor=white)](https://apps.apple.com/tw/app/id6753217696)
 [![排課系統](https://img.shields.io/badge/排課系統-course.ntutbox.com-3b82f6)](https://course.ntutbox.com)

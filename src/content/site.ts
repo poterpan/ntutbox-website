@@ -18,7 +18,7 @@ import {
 
 export const SITE_URL = "https://ntutbox.com";
 export const APP_NAME = "北科盒子";
-export const APP_NAME_EN = "NTUT Box";
+export const APP_NAME_EN = "NTUTBox";
 export const APP_TAGLINE = "提供北科學生方便的校務體驗";
 export const APP_STORE_URL = "https://apps.apple.com/tw/app/id6753217696";
 /* 官網下載入口統一帶 campaign 參數（App Store Connect → App 分析 → 廣告活動，ct=website）。
@@ -26,7 +26,7 @@ export const APP_STORE_URL = "https://apps.apple.com/tw/app/id6753217696";
 export const APP_STORE_CAMPAIGN_URL =
   "https://apps.apple.com/app/apple-store/id6753217696?pt=126597733&ct=website&mt=8";
 
-export const SITE_TITLE = "北科盒子 NTUT Box — 北科大學生的智慧課表 App";
+export const SITE_TITLE = "北科盒子 NTUTBox — 北科大學生的智慧課表 App";
 export const SITE_DESCRIPTION =
   "課表同步、成績查詢、期末預選選課、i 學園整合、60+ 項校務服務一鍵直達。由北科學生獨立開發的非官方校務 App，iPhone 免費下載。";
 
@@ -311,7 +311,7 @@ export const ECOSYSTEM = [
 /* ── 關於開發者（/about）───────────────────────────────────────── */
 export const ABOUT = {
   metaTitle: "關於開發者",
-  metaDescription: "北科盒子（NTUT Box）由北科學生 PoterPan 獨立開發與維護。",
+  metaDescription: "北科盒子（NTUTBox）由北科學生 PoterPan 獨立開發與維護。",
   name: "PoterPan",
   intro: "北科盒子由北科學生 PoterPan 獨立開發與維護。",
   paragraphs: [
