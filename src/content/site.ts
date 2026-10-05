@@ -287,7 +287,7 @@ export const PRIVACY_ANALYTICS = {
 
 /* 取代舊文「本網站為純靜態頁面，不使用 cookie，不埋設任何追蹤或分析程式」。 */
 export const PRIVACY_WEBSITE_PARAGRAPH =
-  "本網站為靜態頁面，不要求您提供任何個人資料。除上節所述、經您同意始啟用之成效分析外，本網站僅於您做出選擇後寫入一個記錄該選擇之 cookie。本網站由 Cloudflare 代管，Cloudflare 可能基於安全與效能目的處理必要之連線紀錄。";
+  "本網站為靜態頁面，沒有會員系統，亦不要求您提供任何個人資料。除上節所述、經您同意始啟用之成效分析外，本網站僅於您做出選擇後寫入一個記錄該選擇之 cookie。本網站由 Cloudflare 代管，Cloudflare 可能基於安全與效能目的處理必要之連線紀錄。";
 
 export const ECOSYSTEM = [
   {

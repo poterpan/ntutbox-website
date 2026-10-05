@@ -167,7 +167,7 @@ export const PRIVACY: LegalDocumentContent = {
         },
         {
           type: "p",
-          text: "本 App 使用 Apple 提供之裝置驗證服務，確認請求來自正版 App。此項驗證不涉及您的姓名、學號或 Apple ID，亦不與會員帳號連結，相關驗證資料於最後使用後一年刪除。本網站之登入功能（目前僅供管理人員使用）另使用 Cloudflare 提供之機器人驗證服務，過程中 Cloudflare 將處理瀏覽器與連線資訊。",
+          text: "本 App 使用 Apple 提供之裝置驗證服務，確認請求來自正版 App。此項驗證不涉及您的姓名、學號或 Apple ID，亦不與會員帳號連結，相關驗證資料於最後使用後一年刪除。本服務之網頁管理介面（僅供管理人員使用）於登入時使用 Cloudflare 提供之機器人驗證服務，過程中 Cloudflare 將處理瀏覽器與連線資訊。",
         },
         {
           type: "p",
