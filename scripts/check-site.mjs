@@ -21,7 +21,7 @@ function allHtmlFiles(dir = OUT, acc = []) {
 }
 
 // ── 1. 必要檔案（隨任務增長）────────────────────────────
-const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "favicon.png", "apple-touch-icon.png", "qr-appstore.svg", "privacy/index.html", "support/index.html", "about/index.html", "guide/selection/index.html", "404.html", "sitemap.xml", "robots.txt"];
+const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "favicon.png", "apple-touch-icon.png", "qr-appstore.svg", "privacy/index.html", "terms/index.html", "support/index.html", "about/index.html", "guide/selection/index.html", "404.html", "sitemap.xml", "robots.txt"];
 for (const f of REQUIRED_FILES) if (!exists(f)) fail(`缺少必要檔案 out/${f}`);
 
 const shots = exists("screenshots")
@@ -70,6 +70,7 @@ const PAGE_ASSERTIONS = {
     "本 App 為非官方應用程式，與國立臺北科技大學無正式關聯。所有課表資料來源於 NTUT 官方教務系統。",
     "© 2026 PoterPan",
     "/privacy/",
+    "/terms/",
     "/support/",
     "status.ntutbox.com",
     "instagram.com/ntutbox_official",
@@ -112,7 +113,7 @@ const PAGE_ASSERTIONS = {
     "第三方伺服器",
     "最後更新",
     "TelemetryDeck",
-    "資料保留與刪除",
+    "資料保留期限",
     "關閉匿名統計",
     // 網站分析揭露（規格 §4 六項必要涵蓋內容，各取一段不跨插值邊界的字串）
     "網站分析與廣告成效",
@@ -126,6 +127,23 @@ const PAGE_ASSERTIONS = {
     "policies.google.com/privacy",
     // 可撤回同意的入口
     "分析設定",
+    // 北科盒子會員（2.10.0）：揭露項目各取一段不跨插值邊界的字串
+    "北科盒子會員",
+    "學號與信箱不會顯示給其他使用者",
+    "上傳後 90 天自動刪除",
+    "App Attest",
+    "刪除會員資料",
+    "個人資料保護法",
+    "/terms/",
+  ],
+  "terms/index.html": [
+    "使用條款",
+    "零容忍",
+    "檢舉",
+    "封鎖",
+    "停權",
+    "準據法",
+    "/privacy/",
   ],
   "support/index.html": [
     "常見問題",
@@ -166,12 +184,23 @@ for (const [page, terms] of Object.entries(PAGE_FORBIDDEN)) {
   }
 }
 
+// ── 4c. 法律文件的待確認標記：草稿用來標出還沒核實的事實，留著上線等於對外承諾了一句沒確認的話 ──
+for (const file of allHtmlFiles()) {
+  const pending = readFileSync(file, "utf8").match(/【待(?:確認|補)：[^】]*】/g);
+  // RSC payload 會把同一段文字再印一次，所以去重
+  if (pending) {
+    const unique = [...new Set(pending)];
+    fail(`${file} 仍有 ${unique.length} 處待確認標記：\n      ${unique.join("\n      ")}`);
+  }
+}
+
 // ── 5. Sitemap 驗證（Task 8）──
 if (exists("sitemap.xml")) {
   const sm = read("sitemap.xml");
   for (const u of [
     "https://ntutbox.com/",
     "https://ntutbox.com/privacy/",
+    "https://ntutbox.com/terms/",
     "https://ntutbox.com/support/",
     "https://ntutbox.com/about/",
     "https://ntutbox.com/guide/selection/",
