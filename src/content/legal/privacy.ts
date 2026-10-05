@@ -1,7 +1,9 @@
 /* 隱私權政策（繁中）。
    ⚠️ 對外法律承諾，owner 逐字核可後才可 merge（CLAUDE.md「隱私權政策 = 對外承諾」）。
    會員、回報、許願、防濫用與保留期限都對照 ntutbox-api 的 README、docs/api.md、migrations
-   與 src/retention.ts；後端改了期限或欄位，這裡要一起改並換 version。
+   與 src/retention.ts；後端改了期限或欄位，這裡要一起改。
+   version 只在需要使用者重新同意的重大變更時更換，必須與後端 CURRENT_TERMS_VERSION 及 App 內建值一致；
+   文字潤飾或不影響權利義務的修改不換 version，只改 updated。
    寫法：人稱「您」、主體「本服務」；不寫門檻數字、演算法、內部判斷流程與 App 選單路徑。 */
 import { LINKS } from "@/content/site";
 import type { LegalDocumentContent } from "./types";

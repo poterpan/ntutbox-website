@@ -19,8 +19,9 @@ export type LegalSection = {
 
 export type LegalDocumentContent = {
   title: string;
-  /** App 與後端記錄同意時存的版本字串；內容有任何修改就換新值 */
+  /** 只在需要使用者重新同意的重大變更時更換，必須與後端 CURRENT_TERMS_VERSION 及 App 內建值一致 */
   version: string;
+  /** 頁面顯示的最後更新日期；文字潤飾或不影響權利義務的修改只改這裡，不換 version */
   updated: string;
   metaDescription: string;
   sections: LegalSection[];

@@ -1,6 +1,7 @@
 /* 使用條款（繁中）。
-   ⚠️ 對外法律承諾，owner 逐字核可後才可 merge。version 是 App 與後端記錄同意時存的值，
-   內容有任何修改就換新值；只有重大變更才請使用者重新同意。
+   ⚠️ 對外法律承諾，owner 逐字核可後才可 merge。version 只在需要使用者重新同意的重大變更時更換，
+   必須與後端 CURRENT_TERMS_VERSION 及 App 內建值一致；文字潤飾或不影響權利義務的修改不換 version，
+   只改 updated。
    寫法：人稱「您」、主體「本服務」；不寫門檻數字、演算法、內部判斷流程與 App 選單路徑。 */
 import { LINKS } from "@/content/site";
 import type { LegalDocumentContent } from "./types";
