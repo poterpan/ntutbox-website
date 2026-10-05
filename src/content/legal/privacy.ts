@@ -12,7 +12,7 @@ export const PRIVACY: LegalDocumentContent = {
   version: "2026-10-06",
   updated: "2026-10-06",
   metaDescription:
-    "北科盒子（NTUT Box）隱私權政策：校務帳號密碼只存在你的裝置；加入北科盒子會員、回報問題與許願時，我們保存哪些資料、保存多久、怎麼刪除。",
+    "北科盒子（NTUTBox）隱私權政策：校務帳號密碼只存在你的裝置；加入北科盒子會員、回報問題與許願時，我們保存哪些資料、保存多久、怎麼刪除。",
   sections: [
     {
       id: "scope",
@@ -20,7 +20,7 @@ export const PRIVACY: LegalDocumentContent = {
       blocks: [
         {
           type: "p",
-          text: "本政策適用於「北科盒子（NTUT Box）」iOS 應用程式（下稱本 App）、北科盒子會員的許願牆與回報問題，以及本網站（ntutbox.com）。本 App 為非官方應用程式，由北科大學生 PoterPan 獨立開發與維護，與國立臺北科技大學無正式關聯。加入會員另須同意[使用條款](/terms/)。",
+          text: "本政策適用於「北科盒子（NTUTBox）」iOS 應用程式（下稱本 App）、北科盒子會員的許願牆與回報問題，以及本網站（ntutbox.com）。本 App 為非官方應用程式，由北科大學生 PoterPan 獨立開發與維護，與國立臺北科技大學無正式關聯。加入會員另須同意[使用條款](/terms/)。",
         },
       ],
     },

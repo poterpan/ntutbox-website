@@ -11,7 +11,7 @@ export const TERMS: LegalDocumentContent = {
   version: "2026-10-06",
   updated: "2026-10-06",
   metaDescription:
-    "北科盒子（NTUT Box）使用條款：北科盒子會員資格、許願牆的內容規範、檢舉與停權、回報問題，以及服務的免責與準據法。",
+    "北科盒子（NTUTBox）使用條款：北科盒子會員資格、許願牆的內容規範、檢舉與停權、回報問題，以及服務的免責與準據法。",
   sections: [
     {
       id: "scope",
@@ -19,7 +19,7 @@ export const TERMS: LegalDocumentContent = {
       blocks: [
         {
           type: "p",
-          text: "本條款適用於「北科盒子（NTUT Box）」iOS 應用程式（下稱本 App），以及北科盒子會員的許願牆與回報問題。本 App 由北科大學生 PoterPan 獨立開發與維護（下稱我們）。",
+          text: "本條款適用於「北科盒子（NTUTBox）」iOS 應用程式（下稱本 App），以及北科盒子會員的許願牆與回報問題。本 App 由北科大學生 PoterPan 獨立開發與維護（下稱我們）。",
         },
         {
           type: "p",
@@ -197,7 +197,7 @@ export const TERMS: LegalDocumentContent = {
       blocks: [
         {
           type: "p",
-          text: "本條款以中華民國（臺灣）法律為準據法。發生爭議時，雙方先誠意協商；協商不成而需要訴訟時，以臺灣臺北地方法院為第一審管轄法院，法律另有強制規定的，依其規定。【待確認：管轄法院】",
+          text: "本條款以中華民國（臺灣）法律為準據法。發生爭議時，雙方先誠意協商；協商不成而需要訴訟時，以臺灣臺北地方法院為第一審管轄法院，法律另有強制規定的，依其規定。",
         },
       ],
     },
