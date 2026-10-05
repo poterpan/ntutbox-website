@@ -23,6 +23,5 @@ export type LegalDocumentContent = {
   version: string;
   updated: string;
   metaDescription: string;
-  summary?: LegalBlock[];
   sections: LegalSection[];
 };

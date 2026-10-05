@@ -117,13 +117,6 @@ export function LegalDocument({
         最後更新：{doc.updated}・版本 {doc.version}
       </p>
       <div className="mt-8 space-y-8 text-[15px] leading-7 text-[var(--ink-soft)] [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-[var(--ink)]">
-        {doc.summary && (
-          <section className="glass-soft rounded-2xl px-5 py-4">
-            {doc.summary.map((b, i) => (
-              <Block key={i} block={b} />
-            ))}
-          </section>
-        )}
         <nav aria-label="目錄">
           <ol className="list-decimal space-y-1 pl-5 text-sm">
             {all.map((s) => (
