@@ -182,7 +182,7 @@ export const PRIVACY: LegalDocumentContent = {
         },
         {
           type: "p",
-          text: "從 App 寄驗證碼時，我們用 Apple 的 App Attest 確認請求真的來自 App Store 上沒有被改過的北科盒子。本 App 會在你的裝置上產生一把金鑰，由 Apple 證明之後把公鑰交給我們；我們保存公鑰、使用次數、Apple 回傳的證明資料和 App 版本。這些資料沒有你的姓名、學號或 Apple ID，也不會和會員帳號連在一起。【待確認：App Attest 公鑰目前沒有設定自動刪除，是否要訂保存期限】",
+          text: "從 App 寄驗證碼時，我們用 Apple 的 App Attest 確認請求真的來自 App Store 上沒有被改過的北科盒子。本 App 會在你的裝置上產生一把金鑰，由 Apple 證明之後把公鑰交給我們；我們保存公鑰、使用次數、Apple 回傳的證明資料和 App 版本。這些資料沒有你的姓名、學號或 Apple ID，也不會和會員帳號連在一起。一把金鑰超過一年沒有使用（從沒用過的，從註冊時起算），就會由每天的排程刪除。",
         },
         {
           type: "p",
@@ -190,7 +190,7 @@ export const PRIVACY: LegalDocumentContent = {
         },
         {
           type: "p",
-          text: "所有連線都經過 HTTPS 加密。伺服器的運作紀錄由 Cloudflare 短期保存，用於除錯。【待確認：Workers 的運作紀錄（observability）保存天數與是否含 IP】",
+          text: "所有連線都經過 HTTPS 加密。伺服器不記錄每一次請求的連線紀錄，只在程式出錯時寫下錯誤訊息，寫入前會遮掉信箱和看起來像學號的字串，但仍可能包含 IP 位址、網址等連線資訊。這些錯誤紀錄存在 Cloudflare，保留 7 天，用於除錯。",
         },
       ],
     },
@@ -267,7 +267,8 @@ export const PRIVACY: LegalDocumentContent = {
             ["每個 IP 的請求次數", "1 小時"],
             ["發許願、檢舉、暱稱建議的次數限制紀錄", "24 小時"],
             ["驗證碼與刪除確認碼", "5 分鐘與 10 分鐘內有效，用過即作廢"],
-            ["App Attest 公鑰", "【待確認：目前沒有自動刪除】"],
+            ["App Attest 公鑰", "最後一次使用後一年（從沒用過的，從註冊時起算）"],
+            ["伺服器的錯誤紀錄", "7 天"],
           ],
         },
       ],
