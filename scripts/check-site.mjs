@@ -109,8 +109,8 @@ const PAGE_ASSERTIONS = {
   ],
   "privacy/index.html": [
     "隱私權政策",
-    "僅安全儲存於您的裝置",
-    "第三方伺服器",
+    "登入所需資訊僅儲存於您的裝置",
+    "直接傳送至北科大官方系統",
     "最後更新",
     "TelemetryDeck",
     "資料保留與刪除",
@@ -123,7 +123,7 @@ const PAGE_ASSERTIONS = {
     "不做廣告個人化",
     "不收集帳號密碼、學號、姓名、班級、搜尋文字、課程選擇",
     "隨時於下方「分析設定」撤回",
-    "只保留廣告來源參數",
+    "移除與分析目的無關、可能含識別資訊之參數",
     "policies.google.com/privacy",
     // 可撤回同意的入口
     "分析設定",
@@ -175,7 +175,9 @@ for (const [page, terms] of Object.entries(PAGE_ASSERTIONS)) {
 // ── 4b. 已作廢的承諾（留著就會與實際行為不符）──
 const PAGE_FORBIDDEN = {
   // 官網啟用 opt-in GA4 後，舊文「不使用 cookie／不埋設分析程式」不再為真
-  "privacy/index.html": ["不埋設任何追蹤或分析程式", "不蒐集任何個人資料"],
+  "privacy/index.html": ["不埋設任何追蹤或分析程式", "不蒐集任何個人資料", "永久停權"],
+  // 停權改稱「無限期停權」：刪除會員後識別值最長只保存一年，寫「永久」不符實際
+  "terms/index.html": ["永久停權"],
 };
 for (const [page, terms] of Object.entries(PAGE_FORBIDDEN)) {
   if (!exists(page)) continue;
