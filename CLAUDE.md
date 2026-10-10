@@ -1,6 +1,6 @@
 # ntutbox-website — 北科盒子官網
 
-「北科盒子（NTUT Box）」的官方行銷網站，線上網址 <https://ntutbox.com>。
+「北科盒子（NTUTBox）」的官方行銷網站，線上網址 <https://ntutbox.com>。
 Next.js 16 App Router **全靜態 export**（`output: "export"`）＋ Tailwind 4（純 CSS `@theme`，無 config 檔）
 ＋ TypeScript，部署於 Cloudflare Workers（static assets only，無 server 邏輯）。
 
