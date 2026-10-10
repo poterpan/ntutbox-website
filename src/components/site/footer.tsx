@@ -4,6 +4,7 @@ import { DISCLAIMER, LINKS, SOCIALS } from "@/content/site";
 const NAV_LINKS = [
   { href: "/about/", label: "關於", external: false },
   { href: "/privacy/", label: "隱私權政策", external: false },
+  { href: "/terms/", label: "使用條款", external: false },
   { href: "/support/", label: "支援與常見問題", external: false },
   { href: LINKS.status, label: "服務狀態", external: true },
 ];

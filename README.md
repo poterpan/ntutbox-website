@@ -41,6 +41,7 @@ pnpm preview        # wrangler dev 本機模擬 Cloudflare 環境
 |---|---|
 | `/` | Landing：功能介紹、App 截圖、訪客模式、生態系服務 |
 | `/privacy` | 隱私權政策 |
+| `/terms` | 使用條款（北科盒子會員、許願牆） |
 | `/support` | 支援與常見問題 |
 
 ## 北科盒子生態系

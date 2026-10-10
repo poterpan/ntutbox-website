@@ -21,7 +21,7 @@ function allHtmlFiles(dir = OUT, acc = []) {
 }
 
 // ── 1. 必要檔案（隨任務增長）────────────────────────────
-const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "favicon.png", "apple-touch-icon.png", "qr-appstore.svg", "privacy/index.html", "support/index.html", "about/index.html", "guide/selection/index.html", "404.html", "sitemap.xml", "robots.txt"];
+const REQUIRED_FILES = ["index.html", "app-icon.png", "og.png", "favicon.png", "apple-touch-icon.png", "qr-appstore.svg", "privacy/index.html", "terms/index.html", "support/index.html", "about/index.html", "guide/selection/index.html", "404.html", "sitemap.xml", "robots.txt"];
 for (const f of REQUIRED_FILES) if (!exists(f)) fail(`缺少必要檔案 out/${f}`);
 
 const shots = exists("screenshots")
@@ -70,6 +70,7 @@ const PAGE_ASSERTIONS = {
     "本 App 為非官方應用程式，與國立臺北科技大學無正式關聯。所有課表資料來源於 NTUT 官方教務系統。",
     "© 2026 PoterPan",
     "/privacy/",
+    "/terms/",
     "/support/",
     "status.ntutbox.com",
     "instagram.com/ntutbox_official",
@@ -108,8 +109,8 @@ const PAGE_ASSERTIONS = {
   ],
   "privacy/index.html": [
     "隱私權政策",
-    "Keychain",
-    "第三方伺服器",
+    "登入所需資訊僅儲存於您的裝置",
+    "直接傳送至北科大官方系統",
     "最後更新",
     "TelemetryDeck",
     "資料保留與刪除",
@@ -117,15 +118,34 @@ const PAGE_ASSERTIONS = {
     // 網站分析揭露（規格 §4 六項必要涵蓋內容，各取一段不跨插值邊界的字串）
     "網站分析與廣告成效",
     "Google Analytics 4",
-    "在你明確同意之前",
+    "於您明確同意之前",
     "第一方 cookie",
+    "事件資料保存期限為 2 個月",
     "不做廣告個人化",
     "不收集帳號密碼、學號、姓名、班級、搜尋文字、課程選擇",
     "隨時於下方「分析設定」撤回",
-    "只保留廣告來源參數",
+    "移除與分析目的無關、可能含識別資訊之參數",
     "policies.google.com/privacy",
     // 可撤回同意的入口
     "分析設定",
+    // 北科盒子會員（2.10.0）：揭露項目各取一段不跨插值邊界的字串
+    "北科盒子會員",
+    "學號與信箱不會顯示給其他使用者",
+    "上傳後 90 天自動刪除",
+    "裝置驗證",
+    "刪除會員資料",
+    "個人資料保護法",
+    "/terms/",
+  ],
+  "terms/index.html": [
+    "使用條款",
+    "零容忍",
+    "檢舉",
+    "封鎖",
+    "停權",
+    "準據法",
+    "收到檢舉後 24 小時內處置",
+    "/privacy/",
   ],
   "support/index.html": [
     "常見問題",
@@ -156,7 +176,9 @@ for (const [page, terms] of Object.entries(PAGE_ASSERTIONS)) {
 // ── 4b. 已作廢的承諾（留著就會與實際行為不符）──
 const PAGE_FORBIDDEN = {
   // 官網啟用 opt-in GA4 後，舊文「不使用 cookie／不埋設分析程式」不再為真
-  "privacy/index.html": ["不埋設任何追蹤或分析程式", "不蒐集任何個人資料"],
+  "privacy/index.html": ["不埋設任何追蹤或分析程式", "不蒐集任何個人資料", "永久停權"],
+  // 停權改稱「無限期停權」：刪除會員後識別值最長只保存一年，寫「永久」不符實際
+  "terms/index.html": ["永久停權"],
 };
 for (const [page, terms] of Object.entries(PAGE_FORBIDDEN)) {
   if (!exists(page)) continue;
@@ -166,12 +188,23 @@ for (const [page, terms] of Object.entries(PAGE_FORBIDDEN)) {
   }
 }
 
+// ── 4c. 法律文件的待確認標記：草稿用來標出還沒核實的事實，留著上線等於對外承諾了一句沒確認的話 ──
+for (const file of allHtmlFiles()) {
+  const pending = readFileSync(file, "utf8").match(/【待(?:確認|補)：[^】]*】/g);
+  // RSC payload 會把同一段文字再印一次，所以去重
+  if (pending) {
+    const unique = [...new Set(pending)];
+    fail(`${file} 仍有 ${unique.length} 處待確認標記：\n      ${unique.join("\n      ")}`);
+  }
+}
+
 // ── 5. Sitemap 驗證（Task 8）──
 if (exists("sitemap.xml")) {
   const sm = read("sitemap.xml");
   for (const u of [
     "https://ntutbox.com/",
     "https://ntutbox.com/privacy/",
+    "https://ntutbox.com/terms/",
     "https://ntutbox.com/support/",
     "https://ntutbox.com/about/",
     "https://ntutbox.com/guide/selection/",
