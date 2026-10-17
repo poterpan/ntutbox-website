@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="icon-shadow" x="-35%" y="-35%" width="170%" height="180%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#2a61b8" flood-opacity="0.23"/>
+    </filter>
+    <filter id="soft-shadow" x="-30%" y="-50%" width="160%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#48678f" flood-opacity="0.12"/>
+    </filter>
+    <clipPath id="icon-clip">
+      <rect x="736" y="132" width="316" height="316" rx="68"/>
+    </clipPath>
+    <linearGradient id="badge-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.86"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.62"/>
+    </linearGradient>
+  </defs>
+
+  <image href="og-background.png" x="0" y="0" width="1200" height="630" preserveAspectRatio="xMidYMid slice"/>
+
+  <g font-family="PingFang TC, Noto Sans CJK TC, Microsoft JhengHei, sans-serif">
+    <g transform="translate(78 76)" filter="url(#soft-shadow)">
+      <rect width="318" height="44" rx="22" fill="url(#badge-fill)" stroke="#ffffff" stroke-opacity="0.9"/>
+      <circle cx="24" cy="22" r="6" fill="#3b82f6"/>
+      <text x="42" y="29" fill="#345071" font-size="16" font-weight="600" letter-spacing="0.5">北科學生獨立開發・非官方 App</text>
+    </g>
+
+    <text x="76" y="228" fill="#141a24" font-size="70" font-weight="700" letter-spacing="-2">北科盒子</text>
+    <text x="80" y="274" fill="#1d4ed8" font-size="28" font-weight="650" letter-spacing="0.5">NTUT Box</text>
+
+    <text x="78" y="350" fill="#2c3748" font-size="31" font-weight="600" letter-spacing="0.3">提供北科學生方便的校務體驗</text>
+    <text x="78" y="402" fill="#566479" font-size="23" font-weight="450" letter-spacing="0.2">課表・成績・選課・公告，一個 App 就緒</text>
+
+  </g>
+
+  <g filter="url(#icon-shadow)">
+    <rect x="736" y="132" width="316" height="316" rx="68" fill="#ffffff" fill-opacity="0.88" stroke="#ffffff" stroke-width="4"/>
+    <image href="app-icon.png" x="736" y="132" width="316" height="316" preserveAspectRatio="xMidYMid meet" clip-path="url(#icon-clip)"/>
+  </g>
+</svg>

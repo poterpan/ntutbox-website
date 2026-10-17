@@ -20,3 +20,6 @@ next-env.d.ts
 
 # sdd 進度 ledger（session 暫存）
 .superpowers/
+
+# 行銷規劃文件只留本機（公開 repo）
+docs/marketing/
