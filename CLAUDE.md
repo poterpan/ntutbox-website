@@ -106,9 +106,9 @@ zone 拓撲真相檔——**它在另一個 repo**：本機是同一上層目錄
 
 | Repo | 用途 |
 |---|---|
-| `/Users/poterpan/Documents/Coding/SwiftUI/NTUTBox` | iOS App 本體（private） |
-| `/Users/poterpan/Documents/Coding/NTUT/ntutbox-course` | 排課系統（設計 token 來源） |
-| `/Users/poterpan/Documents/Coding/NTUT/ntutbox-edge` | 根網域 edge Worker（AASA、/share） |
-| `/Users/poterpan/Documents/Coding/NTUT/ntutbox-uptimeflare` | 服務狀態頁（status.ntutbox.com） |
+| `/Users/poterpan/Developer/ntutbox/NTUTBox` | iOS App 本體（private） |
+| `/Users/poterpan/Developer/ntutbox/ntutbox-course` | 排課系統（設計 token 來源） |
+| `/Users/poterpan/Developer/ntutbox/ntutbox-edge` | 根網域 edge Worker（AASA、/share） |
+| `/Users/poterpan/Developer/ntutbox/ntutbox-uptimeflare` | 服務狀態頁（status.ntutbox.com） |
 
 設計文件：`docs/superpowers/specs/2026-07-19-ntutbox-website-design.md`（含歷次修訂註記）。
