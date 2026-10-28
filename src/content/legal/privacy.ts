@@ -12,8 +12,8 @@ const CONTACT = `Instagram [@ntutbox_official](${LINKS.instagram}) 或電子郵�
 
 export const PRIVACY: LegalDocumentContent = {
   title: "隱私權政策",
-  version: "2026-10-06",
-  updated: "2026-10-06",
+  version: "2026-10-28",
+  updated: "2026-10-28",
   metaDescription:
     "北科盒子（NTUTBox）隱私權政策：校務帳號密碼不會傳送至本服務之伺服器；北科盒子會員、回報問題與許願牆所蒐集之資料、保存期限及刪除方式。",
   sections: [
@@ -191,7 +191,7 @@ export const PRIVACY: LegalDocumentContent = {
       blocks: [
         {
           type: "p",
-          text: "為瞭解功能之使用情形並改善本 App，本服務使用 TelemetryDeck 蒐集匿名化之使用統計。本 App 傳送之資料包括功能使用事件（例如完成一次課表同步、送出一次教學評量）、不與會員或校務帳號連結之匿名化識別碼、概略時間，以及裝置與 App 之技術資訊（例如系統版本、App 版本、裝置類型）；不傳送姓名、學號、信箱、成績、作答內容或其他校務資料。您得隨時於 App 之設定中關閉匿名統計。本 App 不含廣告。",
+          text: "為瞭解功能之使用情形並改善本 App，本服務使用 TelemetryDeck 蒐集匿名化之使用統計。本 App 傳送之資料包括功能使用事件（例如完成一次課表同步、送出一次教學評量）、不與會員或校務帳號連結之匿名化識別碼、概略時間、裝置與 App 之技術資訊（例如系統版本、App 版本、裝置類型），以及 App 遭系統終止或當機之次數與概略類型（不含當機時之畫面或資料內容）；不傳送姓名、學號、信箱、成績、作答內容或其他校務資料。您得隨時於 App 之設定中關閉匿名統計。本 App 不含廣告。",
         },
       ],
     },
@@ -230,7 +230,7 @@ export const PRIVACY: LegalDocumentContent = {
             [
               "TelemetryDeck",
               "App 匿名使用統計",
-              "功能使用事件、匿名化識別碼、概略時間及裝置與 App 之技術資訊",
+              "功能使用事件、匿名化識別碼、概略時間、裝置與 App 之技術資訊，以及當機與效能統計",
             ],
             ["Google", "本網站與排課系統之網站分析（經您同意後啟用）", "詳見下方「網站分析與廣告成效」"],
           ],

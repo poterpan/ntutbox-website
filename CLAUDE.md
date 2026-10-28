@@ -65,7 +65,7 @@ pnpm fetch-assets   # 重抓 App Store 素材（icon/截圖），僅 App Store �
 
 ## 隱私權政策 = 對外承諾
 
-`src/app/privacy/page.tsx` 的內容是對外法律承諾，且已對齊 App Store 隱私標籤
+`src/content/legal/privacy.ts`（由 `src/app/privacy/page.tsx` 渲染）的內容是對外法律承諾，且已對齊 App Store 隱私標籤
 （TelemetryDeck 匿名分析：產品互動／用於分析／未連結身分／App 內可關閉）。
 **任何增刪都需 owner 逐字核可**，並確認與 App 實際行為（`NTUTBox/Services/AnalyticsService.swift`）一致。
 
